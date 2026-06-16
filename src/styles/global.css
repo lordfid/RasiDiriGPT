@@ -1,0 +1,229 @@
+:root {
+  --bg: #160f1f;
+  --bg-soft: #21162d;
+  --card: rgba(255, 255, 255, 0.08);
+  --card-strong: rgba(255, 255, 255, 0.13);
+  --text: #fff7ed;
+  --muted: #c9b8d8;
+  --accent: #f5b7cf;
+  --accent-2: #b8f3ff;
+  --danger: #ff8da1;
+  --shadow: 0 22px 70px rgba(0, 0, 0, 0.35);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+:root[data-theme="light"] {
+  --bg: #fff7ef;
+  --bg-soft: #f7e7df;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-strong: rgba(255, 255, 255, 0.92);
+  --text: #2a1b2f;
+  --muted: #7c6374;
+  --accent: #8d4063;
+  --accent-2: #186778;
+  --danger: #a42d48;
+  --shadow: 0 18px 45px rgba(85, 42, 80, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(245, 183, 207, 0.24), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(184, 243, 255, 0.16), transparent 32%),
+    var(--bg);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 2px 22px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.screen {
+  padding: 12px 0 50px;
+}
+
+.hero-card,
+.question-card,
+.result-hero,
+.result-section,
+.share-panel,
+.loading-state {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-card {
+  padding: clamp(28px, 7vw, 70px);
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow,
+.question-kind {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 14vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.08em;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 4.5vw, 2.2rem);
+  line-height: 1.22;
+  margin-bottom: 16px;
+}
+
+h3 {
+  margin: 18px 0 10px;
+}
+
+.hero-text,
+.instruction,
+.disclaimer,
+.muted {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-actions,
+.nav-actions,
+.small-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button,
+.theme-toggle,
+.text-button,
+.share-panel button,
+.small-actions button {
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 18px;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--accent), #ffe3ae);
+  color: #261220;
+  font-weight: 800;
+}
+
+.secondary-button,
+.theme-toggle,
+.share-panel button,
+.small-actions button {
+  background: var(--card-strong);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.danger-button {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid color-mix(in srgb, var(--danger), transparent 45%);
+  width: 100%;
+  margin-top: 22px;
+}
+
+.text-button {
+  background: transparent;
+  color: var(--muted);
+  padding-left: 0;
+}
+
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+.full { width: 100%; margin-top: 18px; }
+
+.progress-wrap { margin-bottom: 18px; }
+.progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+.progress-track { height: 10px; background: rgba(255,255,255,0.12); border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); border-radius: 99px; transition: width 0.25s ease; }
+
+.question-card { padding: clamp(20px, 5vw, 42px); }
+.swipe-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+.option-card,
+.option-row {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--card-strong);
+  color: var(--text);
+  border-radius: 22px;
+  padding: 18px;
+  text-align: left;
+  line-height: 1.55;
+  cursor: pointer;
+}
+.option-list { display: grid; gap: 12px; }
+.option-row.selected { outline: 2px solid var(--accent); background: rgba(245,183,207,0.14); }
+.limit-note { color: var(--accent-2); font-weight: 700; }
+
+.ranking-list { display: grid; gap: 12px; }
+.ranking-row { display: grid; grid-template-columns: 34px 1fr auto; gap: 10px; align-items: center; padding: 14px; border-radius: 18px; background: var(--card-strong); }
+.rank-number { font-weight: 800; color: var(--accent); }
+.rank-actions { display: flex; gap: 6px; }
+.rank-actions button { border-radius: 12px; border: 0; padding: 8px 10px; }
+
+.result-hero { padding: clamp(24px, 6vw, 54px); margin-bottom: 18px; }
+.confidence-pill { display: inline-flex; margin-top: 10px; padding: 9px 13px; border-radius: 999px; background: rgba(184,243,255,0.13); color: var(--accent-2); font-weight: 800; }
+.share-panel { padding: 16px; display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.share-message { width: 100%; margin: 6px 0 0; color: var(--accent-2); }
+.result-section { margin: 14px 0; overflow: hidden; }
+.section-title { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: transparent; color: var(--text); border: 0; cursor: pointer; font-weight: 800; font-size: 1rem; }
+.section-content { padding: 0 20px 20px; }
+.score-list { display: grid; gap: 8px; }
+.score-row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08); }
+.loading-state { padding: 18px; margin: 20px 0; text-align: center; color: var(--accent-2); }
+
+@media (max-width: 680px) {
+  .app-shell { padding: 14px; }
+  .swipe-grid { grid-template-columns: 1fr; }
+  .hero-actions, .small-actions, .share-panel { flex-direction: column; }
+  .primary-button, .secondary-button, .small-actions button, .share-panel button { width: 100%; }
+}
