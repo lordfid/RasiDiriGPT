@@ -21,6 +21,47 @@ function ScoreList({ items }: { items: RankedScore[] }) {
   );
 }
 
+function HighlightCards({ result }: { result: FinalResult }) {
+  const cards = [
+    {
+      label: "Pola utama",
+      value: result.topMBTI[0]?.key ?? "—",
+      sub: result.enneagram.wing ? `Enneagram ${result.enneagram.wing}` : undefined,
+      color: "highlight-purple",
+    },
+    {
+      label: "Dalam relasi",
+      value: result.relationshipTendency[0]?.key ?? "—",
+      sub: result.preferredLoveStyle[0]?.key ?? undefined,
+      color: "highlight-pink",
+    },
+    {
+      label: "Saat tertekan",
+      value: result.stressResponse[0]?.key ?? "—",
+      sub: result.defensePattern[0]?.key ?? undefined,
+      color: "highlight-blue",
+    },
+    {
+      label: "Naluri dominan",
+      value: result.instinctStacking[0]?.key ?? "—",
+      sub: result.instinctStacking[1]?.key ?? undefined,
+      color: "highlight-teal",
+    },
+  ];
+
+  return (
+    <div className="highlight-grid">
+      {cards.map((card) => (
+        <div className={`highlight-card ${card.color}`} key={card.label}>
+          <p className="highlight-label">{card.label}</p>
+          <p className="highlight-value">{card.value}</p>
+          {card.sub && <p className="highlight-sub">{card.sub}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function ResultPage({ result, onRestart }: ResultPageProps) {
   return (
     <main className="screen result-page">
@@ -28,8 +69,12 @@ export function ResultPage({ result, onRestart }: ResultPageProps) {
         <p className="eyebrow">hasil sementara</p>
         <h1>{result.topMBTI[0]?.key ?? "Rasi Diri"}</h1>
         <p>{result.summary}</p>
-        <div className="confidence-pill">Confidence {result.confidence.score}/100 — {result.confidence.label}</div>
+        <div className="confidence-pill">
+          Confidence {result.confidence.score}/100 — {result.confidence.label}
+        </div>
       </section>
+
+      <HighlightCards result={result} />
 
       <SharePanel result={result} />
 
