@@ -9,12 +9,19 @@ type ResultPageProps = {
 
 function ScoreList({ items }: { items: RankedScore[] }) {
   if (!items.length) return <p className="muted">Belum cukup data.</p>;
+  const maxScore = Math.max(...items.map((i) => i.score), 1);
   return (
     <div className="score-list">
       {items.map((item) => (
         <div className="score-row" key={item.key}>
-          <span>{item.key}</span>
-          <span>{item.score}</span>
+          <span className="score-key">{item.key}</span>
+          <div className="score-bar-wrap">
+            <div
+              className="score-bar-fill"
+              style={{ width: `${Math.min((item.score / maxScore) * 100, 100)}%` }}
+            />
+          </div>
+          <span className="score-num">{item.score}</span>
         </div>
       ))}
     </div>
@@ -70,7 +77,7 @@ export function ResultPage({ result, onRestart }: ResultPageProps) {
         <h1>{result.topMBTI[0]?.key ?? "Rasi Diri"}</h1>
         <p>{result.summary}</p>
         <div className="confidence-pill">
-          Confidence {result.confidence.score}/100 — {result.confidence.label}
+          Keyakinan hasil {result.confidence.score}/100 — {result.confidence.label}
         </div>
       </section>
 
@@ -100,23 +107,23 @@ export function ResultPage({ result, onRestart }: ResultPageProps) {
         <h3>HEXACO</h3><ScoreList items={result.hexaco} />
         <h3>DISC</h3><ScoreList items={result.disc} />
         <h3>RIASEC</h3><ScoreList items={result.riasec} />
-        <h3>Work style</h3><ScoreList items={result.workStyle} />
-        <h3>Learning style</h3><ScoreList items={result.learningStyle} />
+        <h3>Gaya kerja</h3><ScoreList items={result.workStyle} />
+        <h3>Gaya belajar</h3><ScoreList items={result.learningStyle} />
       </ResultSection>
 
-      <ResultSection title="Relasi, stres, dan pertahanan" defaultOpen={false}>
-        <h3>Relationship</h3><ScoreList items={result.relationshipTendency} />
-        <h3>Stress</h3><ScoreList items={result.stressResponse} />
-        <h3>Defense</h3><ScoreList items={result.defensePattern} />
-        <h3>Communication</h3><ScoreList items={result.communicationStyle} />
-        <h3>Conflict</h3><ScoreList items={result.conflictStyle} />
+      <ResultSection title="Pola kedekatan, saat tertekan, cara bertahan" defaultOpen={false}>
+        <h3>Pola kedekatan</h3><ScoreList items={result.relationshipTendency} />
+        <h3>Saat tertekan</h3><ScoreList items={result.stressResponse} />
+        <h3>Cara bertahan</h3><ScoreList items={result.defensePattern} />
+        <h3>Cara menyampaikan</h3><ScoreList items={result.communicationStyle} />
+        <h3>Cara berkonflik</h3><ScoreList items={result.conflictStyle} />
       </ResultSection>
 
-      <ResultSection title="Values, ideal partner, dan comfort style" defaultOpen={false}>
-        <h3>Values</h3><ScoreList items={result.valuesRanking} />
-        <h3>Ideal partner</h3><ScoreList items={result.idealPartnerTendency} />
-        <h3>Love style</h3><ScoreList items={result.preferredLoveStyle} />
-        <h3>Environment</h3><ScoreList items={result.preferredEnvironment} />
+      <ResultSection title="Nilai, sosok yang mudah kau tuju, gaya mencintai" defaultOpen={false}>
+        <h3>Nilai yang paling ditarik</h3><ScoreList items={result.valuesRanking} />
+        <h3>Sosok yang mudah kau tuju</h3><ScoreList items={result.idealPartnerTendency} />
+        <h3>Gaya mencintai</h3><ScoreList items={result.preferredLoveStyle} />
+        <h3>Tempat yang membuatmu hidup</h3><ScoreList items={result.preferredEnvironment} />
       </ResultSection>
 
       <ResultSection title="Catatan keyakinan hasil" defaultOpen={false}>

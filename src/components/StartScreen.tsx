@@ -1,11 +1,12 @@
 type StartScreenProps = {
   hasProgress: boolean;
   progressPercent: number;
+  totalQuestions: number;
   onStart: () => void;
   onContinue: () => void;
 };
 
-export function StartScreen({ hasProgress, progressPercent, onStart, onContinue }: StartScreenProps) {
+export function StartScreen({ hasProgress, progressPercent, totalQuestions, onStart, onContinue }: StartScreenProps) {
   return (
     <main className="screen start-screen">
       <section className="hero-card">
@@ -18,7 +19,7 @@ export function StartScreen({ hasProgress, progressPercent, onStart, onContinue 
 
         <div className="duration-hint">
           <span className="duration-icon">⏱</span>
-          <span>~25–35 menit · 249 pertanyaan · Tersimpan otomatis</span>
+          <span>~25–35 menit · {totalQuestions} pertanyaan · Tersimpan otomatis</span>
         </div>
 
         <div className="hero-actions">

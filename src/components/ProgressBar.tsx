@@ -1,15 +1,15 @@
-const SECTION_LABELS: { upTo: number; label: string }[] = [
-  { upTo: 40,  label: "Bagian 1 — Inti & Cara Pikir" },
-  { upTo: 80,  label: "Bagian 2 — Preferensi & Gaya" },
-  { upTo: 120, label: "Bagian 3 — Relasi & Kedekatan" },
-  { upTo: 160, label: "Bagian 4 — Stres & Ketahanan" },
-  { upTo: 200, label: "Bagian 5 — Nilai & Tujuan" },
-  { upTo: 237, label: "Bagian 6 — Kerja & Belajar" },
-  { upTo: 999, label: "Bagian 7 — Pendalaman Final" },
+const SECTION_LABELS: { upToPercent: number; label: string }[] = [
+  { upToPercent: 16,  label: "Bagian 1 — Inti & Cara Pikir" },
+  { upToPercent: 32,  label: "Bagian 2 — Preferensi & Gaya" },
+  { upToPercent: 48,  label: "Bagian 3 — Relasi & Kedekatan" },
+  { upToPercent: 64,  label: "Bagian 4 — Stres & Ketahanan" },
+  { upToPercent: 80,  label: "Bagian 5 — Nilai & Tujuan" },
+  { upToPercent: 95,  label: "Bagian 6 — Kerja & Belajar" },
+  { upToPercent: 100, label: "Bagian 7 — Pendalaman Final" },
 ];
 
-function getSectionLabel(current: number): string {
-  return SECTION_LABELS.find((s) => current <= s.upTo)?.label ?? "Menyelesaikan...";
+function getSectionLabel(percent: number): string {
+  return SECTION_LABELS.find((s) => percent <= s.upToPercent)?.label ?? "Menyelesaikan...";
 }
 
 function getMotivation(percent: number): string {
@@ -29,7 +29,7 @@ type ProgressBarProps = {
 
 export function ProgressBar({ current, total }: ProgressBarProps) {
   const percent = total ? Math.round((current / total) * 100) : 0;
-  const sectionLabel = getSectionLabel(current);
+  const sectionLabel = getSectionLabel(percent);
   const motivation = getMotivation(percent);
 
   return (

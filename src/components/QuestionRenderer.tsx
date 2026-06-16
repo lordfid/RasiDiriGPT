@@ -10,14 +10,18 @@ type QuestionRendererProps = {
 };
 
 export function QuestionRenderer({ question, onAnswer, onSkip }: QuestionRendererProps) {
+  const isForcedChoice = question.kind === "forcedChoice";
   return (
     <section>
-      {question.kind === "forcedChoice" && <SwipeQuestionCard question={question} onAnswer={onAnswer} />}
+      {isForcedChoice && <SwipeQuestionCard question={question} onAnswer={onAnswer} />}
       {(question.kind === "singleChoice" || question.kind === "multiChoice" || question.kind === "firstReaction" || question.kind === "hiddenReaction") && (
         <ChoiceQuestionCard question={question} onAnswer={onAnswer} />
       )}
       {question.kind === "ranking" && <RankingQuestionCard question={question} onAnswer={onAnswer} />}
-      <button className="text-button" onClick={onSkip}>Lewati pertanyaan ini</button>
+      {/* Tidak tampilkan tombol skip global untuk forcedChoice — sudah ada tombol Lewati di SwipeQuestionCard */}
+      {!isForcedChoice && (
+        <button className="text-button" onClick={onSkip}>Lewati pertanyaan ini</button>
+      )}
     </section>
   );
 }
