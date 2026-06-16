@@ -42,3 +42,18 @@ export function resultToPlainText(result: FinalResult): string {
     "Catatan: hasil ini bukan diagnosis klinis."
   ].join("\n");
 }
+
+export function resultToThreeSentences(result: FinalResult): string {
+  const mbti = result.topMBTI[0]?.key ?? "—";
+  const enneagram = result.enneagram.wing ?? "—";
+  const instinct = result.instinctStacking.slice(0, 2).map((i) => i.key).join("/") ?? "—";
+  const relation = result.relationshipTendency[0]?.key ? label(result.relationshipTendency[0].key) : null;
+
+  const lines = [
+    `Aku baru selesai tes Rasi Diri. Pola teratas: ${mbti}, Enneagram ${enneagram}, instinct ${instinct}.`,
+    result.summary.split(". ").slice(0, 2).join(". ") + ".",
+  ];
+  if (relation) lines.push(`Dalam relasi aku cenderung ${relation}.`);
+  lines.push(`(rasidiri.vercel.app)`);
+  return lines.join("\n");
+}

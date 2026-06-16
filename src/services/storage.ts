@@ -45,7 +45,13 @@ export function saveTheme(theme: "dark" | "light"): void {
 }
 
 export function loadTheme(): "dark" | "light" {
-  return safeGet<"dark" | "light">(KEYS.theme, "dark");
+  // Deteksi preferensi sistem jika belum pernah diset
+  const saved = safeGet<"dark" | "light" | null>(KEYS.theme, null);
+  if (saved) return saved;
+  if (typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: light)").matches) {
+    return "light";
+  }
+  return "dark";
 }
 
 export function saveLastResult(result: FinalResult): void {
