@@ -25,7 +25,7 @@ export const BASE_QUESTIONS: QuestionItem[] = [
   ...RELATIONSHIP_QUESTIONS,
   ...STRESS_QUESTIONS,
   ...VALUES_QUESTIONS,
-  ...WORK_QUESTIONS
+  ...WORK_QUESTIONS,
 ];
 
 export const FINAL_COVERAGE_QUESTIONS: QuestionItem[] = [
@@ -39,12 +39,24 @@ export const FINAL_COVERAGE_QUESTIONS: QuestionItem[] = [
   ...FINAL_CONFLICT_COMMUNICATION_QUESTIONS,
   ...FINAL_RELATIONSHIP_STRESS_QUESTIONS,
   ...FINAL_VALUES_WORK_LEARNING_QUESTIONS,
-  ...FINAL_IDEAL_PREFERENCE_QUESTIONS
+  ...FINAL_IDEAL_PREFERENCE_QUESTIONS,
 ];
 
-export const QUESTIONS: QuestionItem[] = [...BASE_QUESTIONS, ...FINAL_COVERAGE_QUESTIONS];
-export const TIE_BREAK_QUESTIONS: QuestionItem[] = [...BASE_TIE_BREAK_QUESTIONS, ...FINAL_TIE_BREAK_QUESTIONS];
-export const ALL_QUESTIONS: QuestionItem[] = [...QUESTIONS, ...TIE_BREAK_QUESTIONS];
+// Semua pertanyaan tie-break digabungkan
+export const TIE_BREAK_QUESTIONS: QuestionItem[] = [
+  ...BASE_TIE_BREAK_QUESTIONS,
+  ...FINAL_TIE_BREAK_QUESTIONS,
+];
+
+// QUESTIONS = seluruh pertanyaan utama + tie-break (aktif saat tes berjalan)
+// Tie-break diletakkan di akhir sehingga terasa sebagai "pendalaman final"
+export const QUESTIONS: QuestionItem[] = [
+  ...BASE_QUESTIONS,
+  ...FINAL_COVERAGE_QUESTIONS,
+  ...TIE_BREAK_QUESTIONS,
+];
+
+export const ALL_QUESTIONS: QuestionItem[] = QUESTIONS;
 
 export function getDuplicateQuestionIds(items: QuestionItem[] = ALL_QUESTIONS): string[] {
   const seen = new Set<string>();
