@@ -1,10 +1,7 @@
 const SECTION_MESSAGES: Record<number, { title: string; subtitle: string }> = {
-  40:  { title: "Kamu sudah melewati bagian pertama.",     subtitle: "Sekarang kita akan melihat cara kamu merespons pilihan dan suasana." },
-  80:  { title: "Setengah lebih sudah terlewati.",          subtitle: "Bagian ini akan membawa kamu ke dinamika hubungan dan kedekatan." },
-  120: { title: "Kamu sudah di lebih dari setengah jalan.", subtitle: "Sekarang kita akan menjelajahi bagaimana kamu merespons tekanan." },
-  160: { title: "Hampir di bagian terdalam.",              subtitle: "Pertanyaan-pertanyaan berikut tentang nilai dan tujuan yang kamu pegang." },
-  200: { title: "Bagian terakhir sebentar lagi.",          subtitle: "Ini bagian tentang cara kamu bekerja, belajar, dan bertumbuh." },
-  237: { title: "Pendalaman final dimulai.",               subtitle: "Pertanyaan-pertanyaan ini memastikan gambar yang terbentuk akurat." },
+  24: { title: "Bagian pertama selesai.", subtitle: "Momen berikutnya bergerak ke hubungan, batas, dan cara kamu tetap utuh." },
+  48: { title: "Kamu sudah melewati bagian terdalam.", subtitle: "Sekarang masuk ke tekanan, nilai, pekerjaan, dan cara kamu memilih saat hari tidak rapi." },
+  72: { title: "Pendalaman terakhir.", subtitle: "Beberapa pilihan berikut membantu memperjelas gambar yang hampir terbentuk." },
 };
 
 type SectionBreakProps = {

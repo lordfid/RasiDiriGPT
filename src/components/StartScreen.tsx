@@ -13,13 +13,12 @@ export function StartScreen({ hasProgress, progressPercent, totalQuestions, onSt
         <p className="eyebrow">peta kecil dari cara kau memilih</p>
         <h1>Rasi Diri</h1>
         <p className="hero-text">
-          Bukan sekadar memilih tipe. Kau akan masuk ke momen rumah, chat yang menggantung,
-          meja kerja yang berantakan, rasa malu, cara dicintai, dan benda-benda kecil yang diam-diam kau selamatkan.
+          Kau akan melewati potongan momen: dapur yang terlalu sepi, chat yang menggantung, meja kerja yang kacau, uang yang menipis, dan cara seseorang membuatmu merasa aman atau justru menjauh.
         </p>
 
         <div className="duration-hint">
           <span className="duration-icon">⏱</span>
-          <span>~25–35 menit · {totalQuestions} pertanyaan · Tersimpan otomatis</span>
+          <span>~10–18 menit · {totalQuestions} pertanyaan · Tersimpan otomatis</span>
         </div>
 
         <div className="hero-actions">

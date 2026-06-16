@@ -27,7 +27,7 @@ export function SwipeQuestionCard({ question, onAnswer }: SwipeQuestionCardProps
 
   return (
     <article className="question-card">
-      <p className="question-kind">Pilihan dua arah</p>
+      <p className="question-kind">Satu momen, dua kemungkinan</p>
       <h2>{question.prompt}</h2>
       <p className="instruction">{question.instruction}</p>
       <div className="swipe-grid">
@@ -35,8 +35,8 @@ export function SwipeQuestionCard({ question, onAnswer }: SwipeQuestionCardProps
         <button className="option-card" onClick={() => submit("right")}>{question.right?.text}</button>
       </div>
       <div className="small-actions">
-        <button onClick={() => submit("both")}>Dua-duanya</button>
-        <button onClick={() => submit("neither")}>Tidak dua-duanya</button>
+        <button onClick={() => submit("both")}>Dua-duanya terasa dekat</button>
+        <button onClick={() => submit("neither")}>Tidak ada yang dekat</button>
         <button onClick={() => submit("depends")}>Tergantung</button>
         <button onClick={() => submit("skip")}>Lewati</button>
       </div>
