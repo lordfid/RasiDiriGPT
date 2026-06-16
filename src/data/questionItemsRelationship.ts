@@ -3,167 +3,315 @@ import type { QuestionItem } from "../types";
 export const RELATIONSHIP_QUESTIONS: QuestionItem[] = [
   {
     "id": "rel_001",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
       "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Setelah malam yang terasa dekat, pesanmu hanya dibaca. Di layar HP ada tanda centang, dan jam dinding terdengar terlalu keras.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Pesanmu dibaca sejak sore. Malamnya, ia hanya mengirim, “maaf, tadi sibuk.” Tidak ada penjelasan lain.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_001_a",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
+        "text": "Aku membalas pendek dan menunggu apakah ia sendiri berusaha memperbaiki jarak itu.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5,
+            "Ni": 2,
+            "Se": -0.6
           },
-          "communication": {
-            "overExplaining": 1
+          "mbtiAxis": {
+            "F": 1,
+            "I": 1.1,
+            "N": 1,
+            "J": 0.4
           },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
+          "stackRole": {
+            "dominant": 1.1,
+            "opposing": 0.8
           },
           "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "observeFirst": 1,
+            "indirectEngagement": 0.8,
+            "certaintySeeking": 1
           },
           "positive": {
-            "connectionCare": 1
+            "keptSelfRespect": 1,
+            "patientReading": 1,
+            "checkedRisk": 1
           },
           "negative": {
-            "coldDistance": -0.8
+            "selfErasure": -0.8,
+            "rushedMove": -0.8,
+            "blindLeap": -0.8
           },
-          "reliability": 0.78
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "socionics": {
+            "intuitiveEthical": 0.5
+          },
+          "quadra": {
+            "Beta": 0.25,
+            "Delta": 0.2
+          },
+          "enneagram": {
+            "6": 1.1
+          },
+          "coreFear": {
+            "unsafe": 0.8
+          },
+          "coreDesire": {
+            "certainty": 0.7
+          },
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
+          },
+          "relationship": {
+            "reassuranceSeeking": 0.6
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_001_b",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku bertanya langsung, “aku perlu tahu ini sekadar sibuk, atau kau memang mulai menjauh?”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "justiceSeeking": 1,
+            "directEngagement": 0.4,
+            "emotionalExpression": 0.8
           },
           "positive": {
-            "selfProtection": 1
+            "softRepair": 1,
+            "stoodForFairness": 1,
+            "honestTenderness": 0.8
           },
           "negative": {
-            "immediateDisclosure": -0.8
+            "coldCut": -0.8,
+            "easySilence": -0.8,
+            "floodedReaction": -0.5
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_001_c",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
-        "weights": {
           "relationship": {
-            "autonomyProtection": 1,
+            "repairSeeking": 0.8,
             "secureLeaning": 0.5
           },
           "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
+            "gentle": 0.7,
+            "expressive": 0.3
           },
           "enneagram": {
-            "8": 0.8,
-            "1": 0.5
+            "1": 0.8,
+            "8": 0.4
           },
-          "instinct": {
-            "sx": 0.4
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
           },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_001_d",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
+          "values": {
+            "justice": 0.8,
+            "truth": 0.4
           },
           "conflict": {
-            "repairAttempt": 1
+            "directConfrontation": 0.7
           },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
+          "bigFive": {
+            "Neuroticism": 0.8
           },
-          "instinct": {
-            "so": 0.5
+          "hexaco": {
+            "Emotionality": 0.9
           },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
           },
-          "positive": {
-            "bridgeMaking": 1
+          "stress": {
+            "collapse": 0.4,
+            "freeze": 0.3
           },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_001_a",
+      "text": "Aku membalas pendek dan menunggu apakah ia sendiri berusaha memperbaiki jarak itu.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5,
+          "Ni": 2,
+          "Se": -0.6
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 1.1,
+          "N": 1,
+          "J": 0.4
+        },
+        "stackRole": {
+          "dominant": 1.1,
+          "opposing": 0.8
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "observeFirst": 1,
+          "indirectEngagement": 0.8,
+          "certaintySeeking": 1
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "patientReading": 1,
+          "checkedRisk": 1
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "rushedMove": -0.8,
+          "blindLeap": -0.8
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "socionics": {
+          "intuitiveEthical": 0.5
+        },
+        "quadra": {
+          "Beta": 0.25,
+          "Delta": 0.2
+        },
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "relationship": {
+          "reassuranceSeeking": 0.6
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_001_b",
+      "text": "Aku bertanya langsung, “aku perlu tahu ini sekadar sibuk, atau kau memang mulai menjauh?”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "justiceSeeking": 1,
+          "directEngagement": 0.4,
+          "emotionalExpression": 0.8
+        },
+        "positive": {
+          "softRepair": 1,
+          "stoodForFairness": 1,
+          "honestTenderness": 0.8
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "easySilence": -0.8,
+          "floodedReaction": -0.5
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.4
+        },
+        "conflict": {
+          "directConfrontation": 0.7
+        },
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "stress": {
+          "collapse": 0.4,
+          "freeze": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "coreFear",
       "evidence",
       "positive",
       "negative"
@@ -172,536 +320,876 @@ export const RELATIONSHIP_QUESTIONS: QuestionItem[] = [
       "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "coreFear",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_002",
     "kind": "forcedChoice",
     "context": {
-      "domain": "family",
-      "pressureLevel": "high",
+      "domain": "friendship",
+      "pressureLevel": "medium",
       "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
+      "emotionalCharge": "medium"
     },
-    "prompt": "Di ruang tamu, seorang keluarga menyebut kekuranganmu sambil tertawa. Orang lain ikut tersenyum karena tidak tahu harus apa.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Sahabatmu mulai sering pergi dengan orang baru. Di kafe, ia masih tertawa denganmu, tapi tidak lagi bercerita duluan.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_002_a",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
+        "text": "Aku tidak langsung menuntut. Aku mencari waktu berdua dan berkata, “aku kangen cara kita ngobrol dulu.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 2.0
           },
           "positive": {
-            "selfRespect": 1
+            "softRepair": 1,
+            "softenedEdge": 1,
+            "keptConnection": 0.6
           },
           "negative": {
-            "selfAbandonment": -0.9
+            "coldCut": -0.8,
+            "needlessSharpness": -0.8,
+            "leftUnsaid": -0.5
           },
-          "reliability": 0.82
+          "relationship": {
+            "repairSeeking": 1.2,
+            "secureLeaning": 1.0
+          },
+          "communication": {
+            "gentle": 1.3,
+            "expressive": 0.3
+          },
+          "bigFive": {
+            "Agreeableness": 0.8
+          },
+          "hexaco": {
+            "Agreeableness": 0.8
+          },
+          "conflict": {
+            "negotiation": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_002_b",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
+        "text": "Aku mulai menarik diri sedikit, karena aku tidak mau terlihat meminta tempat yang sudah tidak diberikan.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
           "enneagram": {
-            "2": 0.8,
-            "9": 0.5
+            "5": 1.0,
+            "6": 1.1
           },
-          "instinct": {
-            "so": 0.5
+          "stress": {
+            "isolate": 0.7,
+            "intellectualize": 0.5
           },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+          "defense": {
+            "intellectualization": 0.8,
+            "withdrawal": 0.5
+          },
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
           },
           "positive": {
-            "bridgeMaking": 1
+            "protectedEnergy": 1,
+            "keptSelfRespect": 1,
+            "checkedRisk": 1
           },
           "negative": {
-            "hardCutoff": -0.8
+            "unreachedHeart": -0.7,
+            "selfErasure": -0.8,
+            "blindLeap": -0.8
           },
-          "reliability": 0.81
+          "evidence": {
+            "analysisLoop": 1,
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "certaintySeeking": 1
+          },
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
+          },
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
+          },
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
+          },
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "coreFear": {
+            "unsafe": 0.8
+          },
+          "coreDesire": {
+            "certainty": 0.7
+          },
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
+          },
+          "relationship": {
+            "reassuranceSeeking": 0.6
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
     "left": {
       "id": "rel_002_a",
-      "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-      "subtleMeaning": "boundary",
+      "text": "Aku tidak langsung menuntut. Aku mencari waktu berdua dan berkata, “aku kangen cara kita ngobrol dulu.”",
+      "subtleMeaning": "hidden",
       "weights": {
-        "relationship": {
-          "autonomyProtection": 1.6,
-          "secureLeaning": 0.6
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
         },
-        "communication": {
-          "restrained": 0.8,
-          "direct": 0.8
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
         },
-        "conflict": {
-          "boundaryCutoff": 1
-        },
-        "enneagram": {
-          "4": 0.5,
-          "8": 0.6
-        },
-        "instinct": {
-          "sp": 0.5
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
         },
         "evidence": {
-          "boundarySetting": 1,
-          "selfRespect": 0.8
+          "peopleFirst": 1,
+          "repairSeeking": 2.0
         },
         "positive": {
-          "selfRespect": 1
+          "softRepair": 1,
+          "softenedEdge": 1,
+          "keptConnection": 0.6
         },
         "negative": {
-          "selfAbandonment": -0.9
+          "coldCut": -0.8,
+          "needlessSharpness": -0.8,
+          "leftUnsaid": -0.5
         },
-        "reliability": 0.82
+        "relationship": {
+          "repairSeeking": 1.2,
+          "secureLeaning": 1.0
+        },
+        "communication": {
+          "gentle": 1.3,
+          "expressive": 0.3
+        },
+        "bigFive": {
+          "Agreeableness": 0.8
+        },
+        "hexaco": {
+          "Agreeableness": 0.8
+        },
+        "conflict": {
+          "negotiation": 0.5
+        },
+        "reliability": 0.84
       }
     },
     "right": {
       "id": "rel_002_b",
-      "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-      "subtleMeaning": "repair",
+      "text": "Aku mulai menarik diri sedikit, karena aku tidak mau terlihat meminta tempat yang sudah tidak diberikan.",
+      "subtleMeaning": "hidden",
       "weights": {
-        "relationship": {
-          "repairSeeking": 2,
-          "withdrawalWhenHurt": -0.5
-        },
-        "communication": {
-          "gentle": 1,
-          "direct": 0.4
-        },
-        "conflict": {
-          "repairAttempt": 1
-        },
         "enneagram": {
-          "2": 0.8,
-          "9": 0.5
+          "5": 1.0,
+          "6": 1.1
         },
-        "instinct": {
-          "so": 0.5
+        "stress": {
+          "isolate": 0.7,
+          "intellectualize": 0.5
         },
-        "evidence": {
-          "repairAttempt": 1,
-          "peopleFirst": 0.7
+        "defense": {
+          "intellectualization": 0.8,
+          "withdrawal": 0.5
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
         },
         "positive": {
-          "bridgeMaking": 1
+          "protectedEnergy": 1,
+          "keptSelfRespect": 1,
+          "checkedRisk": 1
         },
         "negative": {
-          "hardCutoff": -0.8
+          "unreachedHeart": -0.7,
+          "selfErasure": -0.8,
+          "blindLeap": -0.8
         },
-        "reliability": 0.81
+        "evidence": {
+          "analysisLoop": 1,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "certaintySeeking": 1
+        },
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "relationship": {
+          "reassuranceSeeking": 0.6
+        },
+        "reliability": 0.84
       }
-    }
+    },
+    "reliability": 0.84,
+    "targetSystems": [
+      "relationship",
+      "stress",
+      "defense",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "coverageFocus": [
+      "relationship",
+      "stress",
+      "defense",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_003",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "friendship",
+      "domain": "family",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "public",
       "emotionalCharge": "high"
     },
-    "prompt": "Sahabatmu berubah. Di kafe yang biasa kalian datangi, ia menatap pintu lebih sering daripada menatapmu.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Di acara keluarga, seseorang bercanda tentang pilihan hidupmu. Tawa kecil menyebar sebelum kau sempat minum.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_003_a",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
+        "text": "Aku menatapnya dan berkata, “kalau mau tanya, tanya. Jangan bungkus dengan bercanda.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
           },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
+          },
+          "values": {
+            "justice": 0.8,
+            "truth": 0.9,
+            "autonomy": 0.7
           },
           "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+            "directConfrontation": 1.1,
+            "boundaryCutoff": 0.5,
+            "negotiation": 0.3
           },
           "positive": {
-            "bridgeMaking": 1
+            "stoodForFairness": 1,
+            "keptSelfRespect": 1,
+            "namedTheIssue": 0.6
           },
           "negative": {
-            "hardCutoff": -0.8
+            "easySilence": -0.8,
+            "selfErasure": -0.8,
+            "buriedTheIssue": -0.5
           },
-          "reliability": 0.81
+          "evidence": {
+            "justiceSeeking": 1,
+            "directEngagement": 0.7,
+            "boundarySetting": 1,
+            "selfRespect": 0.8
+          },
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
+          },
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
+          },
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
+          },
+          "communication": {
+            "direct": 0.3
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_003_b",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku tersenyum tipis, menunggu acara selesai, lalu menghindari meja itu sampai pulang.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "enneagram": {
+            "9": 1.2,
+            "5": 1.0
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
           },
           "conflict": {
-            "quietWithdrawal": 1
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
           },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "isolate": 0.7,
+            "intellectualize": 0.5,
+            "control": 0.6
           },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_003_c",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
+          "defense": {
+            "withdrawal": 1.0,
+            "intellectualization": 0.8
           },
           "positive": {
-            "cleanBoundary": 1
+            "keptRoomGentle": 0.8,
+            "protectedEnergy": 1,
+            "keptSafe": 1
           },
           "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_003_d",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
+            "unspokenResentment": -0.7,
+            "unreachedHeart": -0.7,
+            "ignoredBody": -0.9
           },
           "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+            "peaceSeeking": 1,
+            "analysisLoop": 1,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
           },
-          "positive": {
-            "connectionCare": 1
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
           },
-          "negative": {
-            "coldDistance": -0.8
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "reliability": 0.78
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_003_a",
+      "text": "Aku menatapnya dan berkata, “kalau mau tanya, tanya. Jangan bungkus dengan bercanda.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.9,
+          "autonomy": 0.7
+        },
+        "conflict": {
+          "directConfrontation": 1.1,
+          "boundaryCutoff": 0.5,
+          "negotiation": 0.3
+        },
+        "positive": {
+          "stoodForFairness": 1,
+          "keptSelfRespect": 1,
+          "namedTheIssue": 0.6
+        },
+        "negative": {
+          "easySilence": -0.8,
+          "selfErasure": -0.8,
+          "buriedTheIssue": -0.5
+        },
+        "evidence": {
+          "justiceSeeking": 1,
+          "directEngagement": 0.7,
+          "boundarySetting": 1,
+          "selfRespect": 0.8
+        },
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "communication": {
+          "direct": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_003_b",
+      "text": "Aku tersenyum tipis, menunggu acara selesai, lalu menghindari meja itu sampai pulang.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2,
+          "5": 1.0
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "isolate": 0.7,
+          "intellectualize": 0.5,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 1.0,
+          "intellectualization": 0.8
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "protectedEnergy": 1,
+          "keptSafe": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "unreachedHeart": -0.7,
+          "ignoredBody": -0.9
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "analysisLoop": 1,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "defense",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "defense",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_004",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
       "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Ia meminta maaf sambil tetap memainkan kunci motor. Kalimatnya pendek: “ya udah, maaf kalau kamu ngerasa gitu.”",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Mantan mengirim pesan singkat: “aku lewat tempat kita dulu.” Di luar, hujan memukul jendela.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_004_a",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
+        "text": "Aku tidak membuka percakapan lama hanya karena malam sedang lemah.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5,
+            "Si": 2,
+            "Ne": -0.6
           },
-          "communication": {
-            "direct": 1.6
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.9,
+            "S": 1,
+            "J": 0.6
           },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
+          "stackRole": {
+            "dominant": 1.1,
+            "opposing": 0.4,
+            "tertiary": 0.3
           },
           "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "memoryReferencing": 1,
+            "carefulComparison": 0.8
           },
           "positive": {
-            "cleanBoundary": 1
+            "keptSelfRespect": 1,
+            "keptSafe": 1,
+            "steadyRecall": 1
           },
           "negative": {
-            "overAccommodation": -0.8
+            "selfErasure": -0.8,
+            "ignoredBody": -0.9,
+            "untestedLeap": -0.7
           },
-          "reliability": 0.82
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4,
+            "familiarPlace": 0.7,
+            "organizedSpace": 0.3
+          },
+          "stress": {
+            "control": 0.6
+          },
+          "temperament": {
+            "SJ": 0.4
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_004_b",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
+        "text": "Aku membalas satu kalimat yang jujur, tapi tidak memberi pintu terlalu lebar.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5,
+            "Si": 2,
+            "Ne": -0.6
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.9,
+            "S": 1,
+            "I": 0.4
           },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.9,
+            "tertiary": 0.3
           },
           "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "memoryReferencing": 1,
+            "carefulComparison": 0.8,
+            "certaintySeeking": 1
           },
           "positive": {
-            "selfRespect": 1
+            "softRepair": 1,
+            "steadyRecall": 1,
+            "checkedRisk": 1
           },
           "negative": {
-            "selfAbandonment": -0.9
+            "coldCut": -0.8,
+            "untestedLeap": -0.7,
+            "blindLeap": -0.8
           },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_004_c",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
-        "weights": {
           "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5,
+            "reassuranceSeeking": 0.6
           },
           "communication": {
-            "gentle": 1,
-            "direct": 0.4
+            "gentle": 0.7,
+            "expressive": 0.3
           },
-          "conflict": {
-            "repairAttempt": 1
+          "environment": {
+            "familiarPlace": 0.7,
+            "organizedSpace": 0.3
           },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_004_d",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
+          "temperament": {
+            "SJ": 0.4
           },
           "enneagram": {
-            "5": 0.7,
-            "9": 0.7
+            "6": 1.1
           },
-          "instinct": {
-            "sp": 0.7
+          "coreFear": {
+            "unsafe": 0.8
           },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+          "coreDesire": {
+            "certainty": 0.7
           },
-          "positive": {
-            "selfProtection": 1
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
           },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_004_a",
+      "text": "Aku tidak membuka percakapan lama hanya karena malam sedang lemah.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5,
+          "Si": 2,
+          "Ne": -0.6
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.9,
+          "S": 1,
+          "J": 0.6
+        },
+        "stackRole": {
+          "dominant": 1.1,
+          "opposing": 0.4,
+          "tertiary": 0.3
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "memoryReferencing": 1,
+          "carefulComparison": 0.8
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "keptSafe": 1,
+          "steadyRecall": 1
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "ignoredBody": -0.9,
+          "untestedLeap": -0.7
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4,
+          "familiarPlace": 0.7,
+          "organizedSpace": 0.3
+        },
+        "stress": {
+          "control": 0.6
+        },
+        "temperament": {
+          "SJ": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_004_b",
+      "text": "Aku membalas satu kalimat yang jujur, tapi tidak memberi pintu terlalu lebar.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5,
+          "Si": 2,
+          "Ne": -0.6
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.9,
+          "S": 1,
+          "I": 0.4
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.9,
+          "tertiary": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "memoryReferencing": 1,
+          "carefulComparison": 0.8,
+          "certaintySeeking": 1
+        },
+        "positive": {
+          "softRepair": 1,
+          "steadyRecall": 1,
+          "checkedRisk": 1
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "untestedLeap": -0.7,
+          "blindLeap": -0.8
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5,
+          "reassuranceSeeking": 0.6
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "environment": {
+          "familiarPlace": 0.7,
+          "organizedSpace": 0.3
+        },
+        "temperament": {
+          "SJ": 0.4
+        },
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
       "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
+      "values",
+      "stress",
       "evidence",
       "positive",
       "negative"
@@ -709,2194 +1197,2407 @@ export const RELATIONSHIP_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "relationship",
       "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
+      "values",
+      "stress",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_005",
-    "kind": "multiChoice",
-    "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Orang yang dekat denganmu tiba-tiba menjauh. Statusnya aktif, tapi pesanmu dibiarkan tenggelam.",
-    "instruction": "Pilih maksimal 2 reaksi yang paling mungkin muncul.",
-    "options": [
-      {
-        "id": "rel_005_a",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_005_b",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_005_c",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_005_d",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
-    "minSelect": 1,
-    "maxSelect": 2
-  },
-  {
-    "id": "rel_006",
-    "kind": "hiddenReaction",
+    "kind": "forcedChoice",
     "context": {
       "domain": "friendship",
       "pressureLevel": "high",
       "socialExposure": "semiPrivate",
       "emotionalCharge": "high"
     },
-    "prompt": "Seseorang yang rapuh meminta bantuan saat kau sendiri sudah hampir habis. Tangannya memegang lenganmu terlalu kuat.",
-    "instruction": "Pilih reaksi yang paling mungkin kau sembunyikan.",
+    "prompt": "Temanmu menangis di motor parkiran. Kau sendiri baru saja melewati hari buruk.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
+    "options": [
+      {
+        "id": "rel_005_a",
+        "text": "Aku duduk di sebelahnya dan berkata, “aku bisa temani, tapi malam ini aku juga pelan-pelan ya.”",
+        "subtleMeaning": "hidden",
+        "weights": {
+          "cognitive": {
+            "Fe": 1.5,
+            "Ti": -0.5,
+            "Fi": 2
+          },
+          "mbtiAxis": {
+            "F": 2,
+            "E": 0.5,
+            "J": 0.3,
+            "I": 0.5
+          },
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.8,
+            "opposing": 0.4
+          },
+          "evidence": {
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
+          },
+          "positive": {
+            "softRepair": 1,
+            "keptSelfRespect": 1,
+            "keptSafe": 1
+          },
+          "negative": {
+            "coldCut": -0.8,
+            "selfErasure": -0.8,
+            "ignoredBody": -0.9
+          },
+          "relationship": {
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "stress": {
+            "control": 0.6
+          },
+          "reliability": 0.84
+        }
+      },
+      {
+        "id": "rel_005_b",
+        "text": "Aku menguatkan diri dulu, mengantar dia pulang, lalu baru memikirkan lelahku setelah sendirian.",
+        "subtleMeaning": "hidden",
+        "weights": {
+          "enneagram": {
+            "2": 1.0
+          },
+          "coreFear": {
+            "unwanted": 0.7
+          },
+          "coreDesire": {
+            "needed": 0.7
+          },
+          "relationship": {
+            "repairSeeking": 1.3,
+            "secureLeaning": 0.5
+          },
+          "work": {
+            "helper": 0.5
+          },
+          "riasec": {
+            "Social": 0.7
+          },
+          "positive": {
+            "warmPresence": 1,
+            "softRepair": 1,
+            "honestTenderness": 0.8
+          },
+          "negative": {
+            "unseenNeed": -0.7,
+            "coldCut": -0.8,
+            "floodedReaction": -0.5
+          },
+          "evidence": {
+            "peopleFirst": 2,
+            "repairSeeking": 0.8,
+            "emotionalExpression": 0.8
+          },
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
+          },
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
+          },
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "bigFive": {
+            "Neuroticism": 0.8
+          },
+          "hexaco": {
+            "Emotionality": 0.9
+          },
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
+          },
+          "stress": {
+            "collapse": 0.4,
+            "freeze": 0.3
+          },
+          "reliability": 0.84
+        }
+      }
+    ],
+    "left": {
+      "id": "rel_005_a",
+      "text": "Aku duduk di sebelahnya dan berkata, “aku bisa temani, tapi malam ini aku juga pelan-pelan ya.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 1.5,
+          "Ti": -0.5,
+          "Fi": 2
+        },
+        "mbtiAxis": {
+          "F": 2,
+          "E": 0.5,
+          "J": 0.3,
+          "I": 0.5
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.8,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "positive": {
+          "softRepair": 1,
+          "keptSelfRespect": 1,
+          "keptSafe": 1
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "selfErasure": -0.8,
+          "ignoredBody": -0.9
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "stress": {
+          "control": 0.6
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_005_b",
+      "text": "Aku menguatkan diri dulu, mengantar dia pulang, lalu baru memikirkan lelahku setelah sendirian.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "2": 1.0
+        },
+        "coreFear": {
+          "unwanted": 0.7
+        },
+        "coreDesire": {
+          "needed": 0.7
+        },
+        "relationship": {
+          "repairSeeking": 1.3,
+          "secureLeaning": 0.5
+        },
+        "work": {
+          "helper": 0.5
+        },
+        "riasec": {
+          "Social": 0.7
+        },
+        "positive": {
+          "warmPresence": 1,
+          "softRepair": 1,
+          "honestTenderness": 0.8
+        },
+        "negative": {
+          "unseenNeed": -0.7,
+          "coldCut": -0.8,
+          "floodedReaction": -0.5
+        },
+        "evidence": {
+          "peopleFirst": 2,
+          "repairSeeking": 0.8,
+          "emotionalExpression": 0.8
+        },
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "stress": {
+          "collapse": 0.4,
+          "freeze": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
+    "targetSystems": [
+      "relationship",
+      "stress",
+      "defense",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "coverageFocus": [
+      "relationship",
+      "stress",
+      "defense",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "batchTag": "forced-choice-rewrite"
+  },
+  {
+    "id": "rel_006",
+    "kind": "forcedChoice",
+    "context": {
+      "domain": "romance",
+      "pressureLevel": "medium",
+      "socialExposure": "semiPrivate",
+      "emotionalCharge": "medium"
+    },
+    "prompt": "Ia memperkenalkanmu ke teman-temannya. Tangannya menyentuh punggung kursimu, seperti memastikan kau tidak sendirian.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_006_a",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
+        "text": "Aku merasa aman kalau ia tetap memberi ruang untukku bergerak sendiri.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
           "evidence": {
             "boundarySetting": 1,
-            "selfRespect": 0.8
+            "selfRespect": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "orderSeeking": 0.8
           },
           "positive": {
-            "selfRespect": 1
+            "keptSelfRespect": 1,
+            "keptSafe": 1,
+            "keptGround": 1
           },
           "negative": {
-            "selfAbandonment": -0.9
+            "selfErasure": -0.8,
+            "ignoredBody": -0.9,
+            "chaoticDrift": -0.7
           },
-          "reliability": 0.82
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5,
+            "security": 0.7
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4,
+            "organizedSpace": 0.6,
+            "familiarPlace": 0.4
+          },
+          "stress": {
+            "control": 0.6
+          },
+          "bigFive": {
+            "Conscientiousness": 0.6
+          },
+          "hexaco": {
+            "Conscientiousness": 0.6
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_006_b",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
+        "text": "Aku merasa hangat kalau ia menunjukkan dengan jelas bahwa aku bagian dari malam itu.",
+        "subtleMeaning": "hidden",
         "weights": {
+          "instinct": {
+            "so": 1.5,
+            "sp": -0.5,
+            "sx": 1.5
+          },
           "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+            "belongingSeeking": 0.8,
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5
           },
           "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
+            "expressive": 0.8,
+            "gentle": 1.0
           },
           "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+            "statusAwareness": 0.7,
+            "visibleRole": 0.7,
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "intensitySeeking": 1,
+            "onePersonFocus": 0.7
           },
           "positive": {
-            "bridgeMaking": 1
+            "socialBridge": 1,
+            "softRepair": 1,
+            "aliveBond": 1
           },
           "negative": {
-            "hardCutoff": -0.8
+            "privateTunnel": -0.6,
+            "coldCut": -0.8,
+            "safeDistance": -0.7
           },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_006_c",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
+          "disc": {
+            "I": 0.5
           },
-          "communication": {
-            "overExplaining": 1
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "conflict": {
-            "appeasement": 0.7
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
+          },
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
+          },
+          "loveStyle": {
+            "emotionalDepth": 0.8,
+            "sharedDream": 0.5
+          },
+          "idealPartner": {
+            "idealIntensity": 0.8,
+            "idealMystery": 0.4
           },
           "enneagram": {
-            "6": 1,
-            "2": 0.6
+            "4": 0.4,
+            "8": 0.2
           },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_006_d",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_006_a",
+      "text": "Aku merasa aman kalau ia tetap memberi ruang untukku bergerak sendiri.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "orderSeeking": 0.8
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "keptSafe": 1,
+          "keptGround": 1
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "ignoredBody": -0.9,
+          "chaoticDrift": -0.7
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5,
+          "security": 0.7
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4,
+          "organizedSpace": 0.6,
+          "familiarPlace": 0.4
+        },
+        "stress": {
+          "control": 0.6
+        },
+        "bigFive": {
+          "Conscientiousness": 0.6
+        },
+        "hexaco": {
+          "Conscientiousness": 0.6
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_006_b",
+      "text": "Aku merasa hangat kalau ia menunjukkan dengan jelas bahwa aku bagian dari malam itu.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "instinct": {
+          "so": 1.5,
+          "sp": -0.5,
+          "sx": 1.5
+        },
+        "relationship": {
+          "belongingSeeking": 0.8,
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "expressive": 0.8,
+          "gentle": 1.0
+        },
+        "evidence": {
+          "statusAwareness": 0.7,
+          "visibleRole": 0.7,
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "intensitySeeking": 1,
+          "onePersonFocus": 0.7
+        },
+        "positive": {
+          "socialBridge": 1,
+          "softRepair": 1,
+          "aliveBond": 1
+        },
+        "negative": {
+          "privateTunnel": -0.6,
+          "coldCut": -0.8,
+          "safeDistance": -0.7
+        },
+        "disc": {
+          "I": 0.5
+        },
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "loveStyle": {
+          "emotionalDepth": 0.8,
+          "sharedDream": 0.5
+        },
+        "idealPartner": {
+          "idealIntensity": 0.8,
+          "idealMystery": 0.4
+        },
+        "enneagram": {
+          "4": 0.4,
+          "8": 0.2
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
+      "loveStyle",
       "instinct",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
+      "loveStyle",
       "instinct",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_007",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "domain": "friendship",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Orang lama mengirim pesan: “aku lewat tempat kita dulu.” Hujan mengetuk jendela, dan kau belum menghapus nomornya.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Seseorang berkata, “kau berubah,” saat kau mulai berhenti selalu tersedia. Meja di antara kalian terasa terlalu kecil.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_007_a",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku berkata, “mungkin aku berubah karena dulu aku terlalu sering mengalah.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
           "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+            "boundarySetting": 1,
+            "selfRespect": 1.2,
+            "justiceSeeking": 1,
+            "directEngagement": 0.4
           },
           "positive": {
-            "selfProtection": 1
+            "keptSelfRespect": 1,
+            "stoodForFairness": 1,
+            "keptMeaning": 0.6
           },
           "negative": {
-            "immediateDisclosure": -0.8
+            "selfErasure": -0.8,
+            "easySilence": -0.8,
+            "hollowYes": -0.5
           },
-          "reliability": 0.8
+          "values": {
+            "autonomy": 1.1,
+            "truth": 0.9,
+            "justice": 0.8,
+            "meaning": 0.4
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5,
+            "directConfrontation": 0.7
+          },
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
+          },
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_007_b",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
+        "text": "Aku bertanya, “bagian mana yang membuatmu merasa kutinggalkan?” sebelum membela diri.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "overExplaining": 1
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 1.5,
+            "directEngagement": 0.4
           },
           "positive": {
-            "connectionCare": 1
+            "softRepair": 1,
+            "softenedEdge": 1,
+            "clearWords": 0.6
           },
           "negative": {
-            "coldDistance": -0.8
+            "coldCut": -0.8,
+            "needlessSharpness": -0.8,
+            "muddyMessage": -0.5
           },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_007_c",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
-        "weights": {
           "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_007_d",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
+            "repairSeeking": 0.8,
             "secureLeaning": 0.5
           },
           "communication": {
-            "direct": 1.6
+            "gentle": 1.6,
+            "expressive": 0.3,
+            "direct": 0.5
+          },
+          "bigFive": {
+            "Agreeableness": 0.8
+          },
+          "hexaco": {
+            "Agreeableness": 0.8
           },
           "conflict": {
-            "directConfrontation": 1.4
+            "negotiation": 0.5
           },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_007_a",
+      "text": "Aku berkata, “mungkin aku berubah karena dulu aku terlalu sering mengalah.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 1.2,
+          "justiceSeeking": 1,
+          "directEngagement": 0.4
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "stoodForFairness": 1,
+          "keptMeaning": 0.6
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "easySilence": -0.8,
+          "hollowYes": -0.5
+        },
+        "values": {
+          "autonomy": 1.1,
+          "truth": 0.9,
+          "justice": 0.8,
+          "meaning": 0.4
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5,
+          "directConfrontation": 0.7
+        },
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_007_b",
+      "text": "Aku bertanya, “bagian mana yang membuatmu merasa kutinggalkan?” sebelum membela diri.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 1.5,
+          "directEngagement": 0.4
+        },
+        "positive": {
+          "softRepair": 1,
+          "softenedEdge": 1,
+          "clearWords": 0.6
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "needlessSharpness": -0.8,
+          "muddyMessage": -0.5
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 1.6,
+          "expressive": 0.3,
+          "direct": 0.5
+        },
+        "bigFive": {
+          "Agreeableness": 0.8
+        },
+        "hexaco": {
+          "Agreeableness": 0.8
+        },
+        "conflict": {
+          "negotiation": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "coreFear",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "coreFear",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_008",
     "kind": "forcedChoice",
     "context": {
-      "domain": "friendship",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
+      "domain": "family",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
+      "emotionalCharge": "medium"
     },
-    "prompt": "Temanmu menyindir sambil tertawa, “sensitif amat sih.” Di meja, orang lain tiba-tiba sibuk dengan minuman masing-masing.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Adikmu diam di kamar setelah dimarahi. Dari luar pintu, terdengar suara kipas dan satu isakan yang ditahan.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_008_a",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
+        "text": "Aku mengetuk pelan dan berkata, “aku taruh makanan di sini. Aku nggak maksa kau cerita.”",
+        "subtleMeaning": "hidden",
         "weights": {
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
+          },
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
+          },
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
+          },
+          "evidence": {
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "peaceSeeking": 1
+          },
+          "positive": {
+            "softRepair": 1,
+            "keptSafe": 1,
+            "keptRoomGentle": 0.8
+          },
+          "negative": {
+            "coldCut": -0.8,
+            "ignoredBody": -0.9,
+            "unspokenResentment": -0.7
+          },
           "relationship": {
-            "autonomyProtection": 1,
+            "repairSeeking": 0.8,
             "secureLeaning": 0.5
           },
           "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
+            "gentle": 0.7,
+            "expressive": 0.3
           },
           "instinct": {
-            "sx": 0.4
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
           },
-          "positive": {
-            "cleanBoundary": 1
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
           },
-          "negative": {
-            "overAccommodation": -0.8
+          "stress": {
+            "control": 0.6,
+            "freeze": 0.5,
+            "fawn": 0.3
           },
-          "reliability": 0.82
+          "enneagram": {
+            "9": 1.2
+          },
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
+          },
+          "defense": {
+            "withdrawal": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_008_b",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku masuk sebentar, duduk di lantai, dan berkata, “aku tahu rasanya disalahkan sendirian.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+            "peopleFirst": 2,
+            "repairSeeking": 0.8,
+            "emotionalExpression": 0.8
           },
           "positive": {
-            "selfProtection": 1
+            "softRepair": 1,
+            "honestTenderness": 0.8,
+            "warmPresence": 1
           },
           "negative": {
-            "immediateDisclosure": -0.8
+            "coldCut": -0.8,
+            "floodedReaction": -0.5,
+            "unseenNeed": -0.7
           },
-          "reliability": 0.8
+          "relationship": {
+            "repairSeeking": 1.3,
+            "secureLeaning": 0.5
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "bigFive": {
+            "Neuroticism": 0.8
+          },
+          "hexaco": {
+            "Emotionality": 0.9
+          },
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
+          },
+          "stress": {
+            "collapse": 0.4,
+            "freeze": 0.3
+          },
+          "enneagram": {
+            "2": 1.0
+          },
+          "coreFear": {
+            "unwanted": 0.7
+          },
+          "coreDesire": {
+            "needed": 0.7
+          },
+          "work": {
+            "helper": 0.5
+          },
+          "riasec": {
+            "Social": 0.7
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
     "left": {
       "id": "rel_008_a",
-      "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-      "subtleMeaning": "direct",
+      "text": "Aku mengetuk pelan dan berkata, “aku taruh makanan di sini. Aku nggak maksa kau cerita.”",
+      "subtleMeaning": "hidden",
       "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "peaceSeeking": 1
+        },
+        "positive": {
+          "softRepair": 1,
+          "keptSafe": 1,
+          "keptRoomGentle": 0.8
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "ignoredBody": -0.9,
+          "unspokenResentment": -0.7
+        },
         "relationship": {
-          "autonomyProtection": 1,
+          "repairSeeking": 0.8,
           "secureLeaning": 0.5
         },
         "communication": {
-          "direct": 1.6
-        },
-        "conflict": {
-          "directConfrontation": 1.4
-        },
-        "enneagram": {
-          "8": 0.8,
-          "1": 0.5
+          "gentle": 0.7,
+          "expressive": 0.3
         },
         "instinct": {
-          "sx": 0.4
+          "sp": 1.5,
+          "sx": -0.3
         },
-        "evidence": {
-          "directEngagement": 1,
-          "boundarySetting": 0.8
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
         },
-        "positive": {
-          "cleanBoundary": 1
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
         },
-        "negative": {
-          "overAccommodation": -0.8
+        "stress": {
+          "control": 0.6,
+          "freeze": 0.5,
+          "fawn": 0.3
         },
-        "reliability": 0.82
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "reliability": 0.84
       }
     },
     "right": {
       "id": "rel_008_b",
-      "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-      "subtleMeaning": "withdraw",
+      "text": "Aku masuk sebentar, duduk di lantai, dan berkata, “aku tahu rasanya disalahkan sendirian.”",
+      "subtleMeaning": "hidden",
       "weights": {
-        "relationship": {
-          "withdrawalWhenHurt": 2,
-          "reassuranceSeeking": -0.4
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
         },
-        "communication": {
-          "minimalResponse": 1,
-          "restrained": 0.8
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
         },
-        "conflict": {
-          "quietWithdrawal": 1
-        },
-        "enneagram": {
-          "5": 0.7,
-          "9": 0.7
-        },
-        "instinct": {
-          "sp": 0.7
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
         },
         "evidence": {
-          "withdrawal": 1,
-          "emotionalSuppression": 0.8
+          "peopleFirst": 2,
+          "repairSeeking": 0.8,
+          "emotionalExpression": 0.8
         },
         "positive": {
-          "selfProtection": 1
+          "softRepair": 1,
+          "honestTenderness": 0.8,
+          "warmPresence": 1
         },
         "negative": {
-          "immediateDisclosure": -0.8
+          "coldCut": -0.8,
+          "floodedReaction": -0.5,
+          "unseenNeed": -0.7
         },
-        "reliability": 0.8
+        "relationship": {
+          "repairSeeking": 1.3,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "stress": {
+          "collapse": 0.4,
+          "freeze": 0.3
+        },
+        "enneagram": {
+          "2": 1.0
+        },
+        "coreFear": {
+          "unwanted": 0.7
+        },
+        "coreDesire": {
+          "needed": 0.7
+        },
+        "work": {
+          "helper": 0.5
+        },
+        "riasec": {
+          "Social": 0.7
+        },
+        "reliability": 0.84
       }
-    }
+    },
+    "reliability": 0.84,
+    "targetSystems": [
+      "relationship",
+      "loveStyle",
+      "communication",
+      "coreDesire",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "coverageFocus": [
+      "relationship",
+      "loveStyle",
+      "communication",
+      "coreDesire",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_009",
-    "kind": "multiChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "family",
+      "domain": "romance",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Ibumu meminta kau mengalah lagi “demi rumah nggak ribut.” Piring belum dicuci, dan malam sudah terlalu panjang.",
-    "instruction": "Pilih maksimal 2 reaksi yang paling mungkin muncul.",
+    "prompt": "Pasanganmu berkata, “terserah,” tapi wajahnya jelas tidak menyerah. Piring di meja belum dibereskan.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_009_a",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
+        "text": "Aku berhenti mencuci piring dan berkata, “jangan pakai terserah kalau sebenarnya ada yang sakit.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "justiceSeeking": 1,
+            "directEngagement": 0.8
           },
           "positive": {
-            "selfRespect": 1
+            "softRepair": 1,
+            "stoodForFairness": 1,
+            "clearWords": 0.6
           },
           "negative": {
-            "selfAbandonment": -0.9
+            "coldCut": -0.8,
+            "easySilence": -0.8,
+            "muddyMessage": -0.5
           },
-          "reliability": 0.82
+          "relationship": {
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5
+          },
+          "communication": {
+            "gentle": 1.0,
+            "expressive": 0.3,
+            "direct": 0.5
+          },
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
+          },
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
+          },
+          "values": {
+            "justice": 0.8,
+            "truth": 0.4
+          },
+          "conflict": {
+            "directConfrontation": 0.7
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_009_b",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
+        "text": "Aku memberi jarak sebentar agar kami tidak saling melempar kalimat yang tidak bisa ditarik.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+          "enneagram": {
+            "9": 1.2,
+            "5": 1.0
           },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
           },
           "conflict": {
-            "repairAttempt": 1
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
           },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "isolate": 0.7,
+            "intellectualize": 0.5,
+            "control": 0.6
           },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_009_c",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+          "defense": {
+            "withdrawal": 1.0,
+            "intellectualization": 0.8
           },
           "positive": {
-            "selfProtection": 1
+            "keptRoomGentle": 0.8,
+            "protectedEnergy": 1,
+            "keptSafe": 1
           },
           "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_009_d",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
+            "unspokenResentment": -0.7,
+            "unreachedHeart": -0.7,
+            "ignoredBody": -0.9
           },
           "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+            "peaceSeeking": 1,
+            "analysisLoop": 1,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
           },
-          "positive": {
-            "connectionCare": 1
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
           },
-          "negative": {
-            "coldDistance": -0.8
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "reliability": 0.78
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_009_a",
+      "text": "Aku berhenti mencuci piring dan berkata, “jangan pakai terserah kalau sebenarnya ada yang sakit.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "justiceSeeking": 1,
+          "directEngagement": 0.8
+        },
+        "positive": {
+          "softRepair": 1,
+          "stoodForFairness": 1,
+          "clearWords": 0.6
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "easySilence": -0.8,
+          "muddyMessage": -0.5
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 1.0,
+          "expressive": 0.3,
+          "direct": 0.5
+        },
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.4
+        },
+        "conflict": {
+          "directConfrontation": 0.7
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_009_b",
+      "text": "Aku memberi jarak sebentar agar kami tidak saling melempar kalimat yang tidak bisa ditarik.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2,
+          "5": 1.0
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "isolate": 0.7,
+          "intellectualize": 0.5,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 1.0,
+          "intellectualization": 0.8
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "protectedEnergy": 1,
+          "keptSafe": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "unreachedHeart": -0.7,
+          "ignoredBody": -0.9
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "analysisLoop": 1,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "stress",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "relationship",
-      "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "communication",
+      "stress",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2",
-    "minSelect": 1,
-    "maxSelect": 2
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_010",
-    "kind": "ranking",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
+      "domain": "friendship",
+      "pressureLevel": "medium",
+      "socialExposure": "public",
+      "emotionalCharge": "medium"
     },
-    "prompt": "Kau harus berkata jujur pada orang yang kau sayangi. Di draft chat, ada lima versi kalimat dan semuanya terasa kurang aman.",
-    "instruction": "Urutkan dari yang paling mungkin kau lakukan sampai yang paling jauh.",
+    "prompt": "Di ulang tahun teman, seseorang memotong ceritamu berkali-kali. Orang lain tidak sadar, tapi kau sadar.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_010_a",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
+        "text": "Aku menyelesaikan kalimatku dengan suara lebih tegas, tanpa meminta izin lagi.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+          "cognitive": {
+            "Se": 2,
+            "Ni": -0.6,
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
+          "mbtiAxis": {
+            "E": 0.6,
+            "S": 1,
+            "P": 0.5,
+            "F": 1,
+            "I": 0.5
           },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
+          "stackRole": {
+            "dominant": 1.0,
+            "inferior": 0.3,
+            "opposing": 0.4
           },
           "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+            "actionFirst": 1,
+            "directEngagement": 1.3,
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "justiceSeeking": 1
           },
           "positive": {
-            "bridgeMaking": 1
+            "presentMove": 1,
+            "keptSelfRespect": 1,
+            "stoodForFairness": 1
           },
           "negative": {
-            "hardCutoff": -0.8
+            "overWaiting": -0.8,
+            "selfErasure": -0.8,
+            "easySilence": -0.8
           },
-          "reliability": 0.81
+          "stress": {
+            "fight": 0.5
+          },
+          "disc": {
+            "D": 0.5
+          },
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.9,
+            "justice": 0.8
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5,
+            "directConfrontation": 0.7
+          },
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
+          },
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_010_b",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
+        "text": "Aku membiarkannya lewat, lalu memilih bicara dengan orang yang benar-benar mendengarkan.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
+          "enneagram": {
+            "9": 1.2
           },
-          "communication": {
-            "direct": 1.6
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
           },
           "conflict": {
-            "directConfrontation": 1.4
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3,
+            "boundaryCutoff": 0.5
           },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "control": 0.6
           },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
+          "defense": {
+            "withdrawal": 0.5
           },
           "positive": {
-            "cleanBoundary": 1
+            "keptRoomGentle": 0.8,
+            "keptSelfRespect": 1,
+            "keptSafe": 1
           },
           "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_010_c",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+            "unspokenResentment": -0.7,
+            "selfErasure": -0.8,
+            "ignoredBody": -0.9
           },
           "evidence": {
+            "peaceSeeking": 1,
             "boundarySetting": 1,
-            "selfRespect": 0.8
+            "selfRespect": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
           },
-          "positive": {
-            "selfRespect": 1
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "negative": {
-            "selfAbandonment": -0.9
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_010_d",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
           },
           "instinct": {
-            "sx": 0.6
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
           },
-          "positive": {
-            "connectionCare": 1
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
           },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_010_e",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_010_a",
+      "text": "Aku menyelesaikan kalimatku dengan suara lebih tegas, tanpa meminta izin lagi.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Se": 2,
+          "Ni": -0.6,
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "E": 0.6,
+          "S": 1,
+          "P": 0.5,
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 1.0,
+          "inferior": 0.3,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "actionFirst": 1,
+          "directEngagement": 1.3,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "justiceSeeking": 1
+        },
+        "positive": {
+          "presentMove": 1,
+          "keptSelfRespect": 1,
+          "stoodForFairness": 1
+        },
+        "negative": {
+          "overWaiting": -0.8,
+          "selfErasure": -0.8,
+          "easySilence": -0.8
+        },
+        "stress": {
+          "fight": 0.5
+        },
+        "disc": {
+          "D": 0.5
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.9,
+          "justice": 0.8
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5,
+          "directConfrontation": 0.7
+        },
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_010_b",
+      "text": "Aku membiarkannya lewat, lalu memilih bicara dengan orang yang benar-benar mendengarkan.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3,
+          "boundaryCutoff": 0.5
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "keptSelfRespect": 1,
+          "keptSafe": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "selfErasure": -0.8,
+          "ignoredBody": -0.9
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
-      "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "relationship",
+      "disc",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
-      "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "relationship",
+      "disc",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2",
-    "rankLimit": 5
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_011",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "friendship",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "domain": "romance",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Di acara kecil, orang yang biasanya mencarimu malah duduk dekat orang lain. Kau memegang gelas plastik lebih erat dari perlu.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Orang yang dekat denganmu berkata, “aku takut kamu bosan kalau tahu semua sisi burukku.”",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_011_a",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku menjawab, “aku tidak butuh kau sempurna, tapi aku butuh kau jujur saat mulai menjauh.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "hexaco": {
+            "HonestyHumility": 1.0
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "moral": {
+            "truthBased": 0.8,
+            "purityIntegrityBased": 0.4
           },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+          "values": {
+            "truth": 1.3,
+            "autonomy": 0.7
           },
           "positive": {
-            "selfProtection": 1
+            "cleanHands": 1,
+            "softRepair": 1,
+            "keptSelfRespect": 1
           },
           "negative": {
-            "immediateDisclosure": -0.8
+            "smoothLie": -0.8,
+            "coldCut": -0.8,
+            "selfErasure": -0.8
           },
-          "reliability": 0.8
+          "evidence": {
+            "truthSeeking": 1,
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "boundarySetting": 1,
+            "selfRespect": 0.8
+          },
+          "cognitive": {
+            "Fe": 1.5,
+            "Ti": -0.5,
+            "Fi": 2
+          },
+          "mbtiAxis": {
+            "F": 2,
+            "E": 0.5,
+            "J": 0.3,
+            "I": 0.5
+          },
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.8,
+            "opposing": 0.4
+          },
+          "relationship": {
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_011_b",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
+        "text": "Aku duduk lebih dekat dan berkata, “kita pelan-pelan. Tapi jangan hilang tanpa memberi tanda.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "communication": {
-            "overExplaining": 1
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
           },
           "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "certaintySeeking": 1,
+            "emotionalExpression": 0.8
           },
           "positive": {
-            "connectionCare": 1
+            "softRepair": 1,
+            "checkedRisk": 1,
+            "honestTenderness": 0.8
           },
           "negative": {
-            "coldDistance": -0.8
+            "coldCut": -0.8,
+            "blindLeap": -0.8,
+            "floodedReaction": -0.5
           },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_011_c",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
-        "weights": {
           "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5,
+            "reassuranceSeeking": 0.6
           },
           "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
+            "gentle": 0.7,
+            "expressive": 0.3
           },
           "enneagram": {
-            "2": 0.8,
-            "9": 0.5
+            "6": 1.1
           },
-          "instinct": {
-            "so": 0.5
+          "coreFear": {
+            "unsafe": 0.8
           },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
+          "coreDesire": {
+            "certainty": 0.7
           },
-          "positive": {
-            "bridgeMaking": 1
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
           },
-          "negative": {
-            "hardCutoff": -0.8
+          "bigFive": {
+            "Neuroticism": 0.8
           },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_011_d",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "hexaco": {
+            "Emotionality": 0.9
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
           },
-          "conflict": {
-            "boundaryCutoff": 1
+          "stress": {
+            "collapse": 0.4,
+            "freeze": 0.3
           },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "rel_011_a",
+      "text": "Aku menjawab, “aku tidak butuh kau sempurna, tapi aku butuh kau jujur saat mulai menjauh.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "hexaco": {
+          "HonestyHumility": 1.0
+        },
+        "moral": {
+          "truthBased": 0.8,
+          "purityIntegrityBased": 0.4
+        },
+        "values": {
+          "truth": 1.3,
+          "autonomy": 0.7
+        },
+        "positive": {
+          "cleanHands": 1,
+          "softRepair": 1,
+          "keptSelfRespect": 1
+        },
+        "negative": {
+          "smoothLie": -0.8,
+          "coldCut": -0.8,
+          "selfErasure": -0.8
+        },
+        "evidence": {
+          "truthSeeking": 1,
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "boundarySetting": 1,
+          "selfRespect": 0.8
+        },
+        "cognitive": {
+          "Fe": 1.5,
+          "Ti": -0.5,
+          "Fi": 2
+        },
+        "mbtiAxis": {
+          "F": 2,
+          "E": 0.5,
+          "J": 0.3,
+          "I": 0.5
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.8,
+          "opposing": 0.4
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "rel_011_b",
+      "text": "Aku duduk lebih dekat dan berkata, “kita pelan-pelan. Tapi jangan hilang tanpa memberi tanda.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "certaintySeeking": 1,
+          "emotionalExpression": 0.8
+        },
+        "positive": {
+          "softRepair": 1,
+          "checkedRisk": 1,
+          "honestTenderness": 0.8
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "blindLeap": -0.8,
+          "floodedReaction": -0.5
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5,
+          "reassuranceSeeking": 0.6
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "stress": {
+          "collapse": 0.4,
+          "freeze": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
+      "loveStyle",
+      "coreFear",
       "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "relationship",
+      "loveStyle",
+      "coreFear",
       "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "rel_012",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
       "domain": "family",
-      "pressureLevel": "high",
+      "pressureLevel": "medium",
       "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
+      "emotionalCharge": "medium"
     },
-    "prompt": "Seseorang berkata, “maafin aja, kan keluarga.” Tapi bagian dalam dirimu belum sampai ke sana.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Ayah atau ibu mengulang nasihat yang sama. Nadanya tidak jahat, tapi tubuhmu sudah lelah mendengarnya.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "rel_012_a",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
+        "text": "Aku berkata pelan, “aku dengar, tapi aku juga perlu dipercaya mengambil jalanku.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
           "evidence": {
             "boundarySetting": 1,
-            "selfRespect": 0.8
+            "selfRespect": 1.2,
+            "directEngagement": 0.4
           },
           "positive": {
-            "selfRespect": 1
+            "keptSelfRespect": 1,
+            "keptMeaning": 0.6,
+            "clearWords": 0.6
           },
           "negative": {
-            "selfAbandonment": -0.9
+            "selfErasure": -0.8,
+            "hollowYes": -0.5,
+            "muddyMessage": -0.5
           },
-          "reliability": 0.82
+          "values": {
+            "autonomy": 1.1,
+            "truth": 0.5,
+            "meaning": 0.4
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "communication": {
+            "direct": 0.5,
+            "gentle": 0.3
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "rel_012_b",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
+        "text": "Aku mengangguk dulu, lalu memilih membuktikan lewat tindakan kecil daripada debat panjang.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
+          "cognitive": {
+            "Te": 2,
+            "Fi": -0.5
           },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
+          "mbtiAxis": {
+            "T": 0.8,
+            "J": 1
           },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
+          "stackRole": {
+            "auxiliary": 0.6,
+            "dominant": 0.5
           },
           "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
+            "practicalRepair": 1,
+            "systemFirst": 0.8,
+            "peaceSeeking": 1,
+            "orderSeeking": 0.8
           },
           "positive": {
-            "selfProtection": 1
+            "clearNextStep": 1,
+            "keptRoomGentle": 0.8,
+            "keptGround": 1
           },
           "negative": {
-            "immediateDisclosure": -0.8
+            "looseProcess": -0.8,
+            "unspokenResentment": -0.7,
+            "chaoticDrift": -0.7
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_012_c",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
+          "work": {
+            "planner": 0.8,
+            "executor": 0.6
           },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
+          "disc": {
+            "C": 0.4,
+            "D": 0.4
           },
           "enneagram": {
-            "2": 0.8,
-            "9": 0.5
+            "9": 1.2
           },
-          "instinct": {
-            "so": 0.5
+          "coreFear": {
+            "conflict": 0.7
           },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_012_d",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
+          "coreDesire": {
+            "peace": 0.7
           },
           "conflict": {
-            "directConfrontation": 1.4
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
           },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3
           },
-          "instinct": {
-            "sx": 0.4
+          "defense": {
+            "withdrawal": 0.5
           },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
+          "bigFive": {
+            "Conscientiousness": 0.6
           },
-          "positive": {
-            "cleanBoundary": 1
+          "hexaco": {
+            "Conscientiousness": 0.6
           },
-          "negative": {
-            "overAccommodation": -0.8
+          "values": {
+            "security": 0.7
           },
-          "reliability": 0.82
+          "environment": {
+            "organizedSpace": 0.6,
+            "familiarPlace": 0.4
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "rel_013",
-    "kind": "multiChoice",
-    "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Ia lupa hari yang bagimu penting. Di meja ada kue kecil yang kau beli sendiri, lilinnya belum dinyalakan.",
-    "instruction": "Pilih maksimal 2 reaksi yang paling mungkin muncul.",
-    "options": [
-      {
-        "id": "rel_013_a",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_013_b",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_013_c",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_013_d",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
-    "minSelect": 1,
-    "maxSelect": 2
-  },
-  {
-    "id": "rel_014",
-    "kind": "hiddenReaction",
-    "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Kau sadar mulai membalas lebih lambat, bukan karena sibuk, tapi karena setiap pesan terasa seperti pintu yang harus dijaga.",
-    "instruction": "Pilih reaksi yang paling mungkin kau sembunyikan.",
-    "options": [
-      {
-        "id": "rel_014_a",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_014_b",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_014_c",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_014_d",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "rel_015",
-    "kind": "forcedChoice",
-    "context": {
-      "domain": "friendship",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Seseorang menunjukkan perhatian di depan umum. Semua orang melihat, dan kau tidak tahu apakah harus hangat atau waspada.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
-    "options": [
-      {
-        "id": "rel_015_a",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_015_b",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
     "left": {
-      "id": "rel_015_a",
-      "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-      "subtleMeaning": "repair",
+      "id": "rel_012_a",
+      "text": "Aku berkata pelan, “aku dengar, tapi aku juga perlu dipercaya mengambil jalanku.”",
+      "subtleMeaning": "hidden",
       "weights": {
-        "relationship": {
-          "repairSeeking": 2,
-          "withdrawalWhenHurt": -0.5
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
         },
-        "communication": {
-          "gentle": 1,
-          "direct": 0.4
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
         },
-        "conflict": {
-          "repairAttempt": 1
-        },
-        "enneagram": {
-          "2": 0.8,
-          "9": 0.5
-        },
-        "instinct": {
-          "so": 0.5
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
         },
         "evidence": {
-          "repairAttempt": 1,
-          "peopleFirst": 0.7
+          "boundarySetting": 1,
+          "selfRespect": 1.2,
+          "directEngagement": 0.4
         },
         "positive": {
-          "bridgeMaking": 1
+          "keptSelfRespect": 1,
+          "keptMeaning": 0.6,
+          "clearWords": 0.6
         },
         "negative": {
-          "hardCutoff": -0.8
+          "selfErasure": -0.8,
+          "hollowYes": -0.5,
+          "muddyMessage": -0.5
         },
-        "reliability": 0.81
+        "values": {
+          "autonomy": 1.1,
+          "truth": 0.5,
+          "meaning": 0.4
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "communication": {
+          "direct": 0.5,
+          "gentle": 0.3
+        },
+        "reliability": 0.84
       }
     },
     "right": {
-      "id": "rel_015_b",
-      "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-      "subtleMeaning": "withdraw",
+      "id": "rel_012_b",
+      "text": "Aku mengangguk dulu, lalu memilih membuktikan lewat tindakan kecil daripada debat panjang.",
+      "subtleMeaning": "hidden",
       "weights": {
-        "relationship": {
-          "withdrawalWhenHurt": 2,
-          "reassuranceSeeking": -0.4
+        "cognitive": {
+          "Te": 2,
+          "Fi": -0.5
         },
-        "communication": {
-          "minimalResponse": 1,
-          "restrained": 0.8
+        "mbtiAxis": {
+          "T": 0.8,
+          "J": 1
         },
-        "conflict": {
-          "quietWithdrawal": 1
-        },
-        "enneagram": {
-          "5": 0.7,
-          "9": 0.7
-        },
-        "instinct": {
-          "sp": 0.7
+        "stackRole": {
+          "auxiliary": 0.6,
+          "dominant": 0.5
         },
         "evidence": {
-          "withdrawal": 1,
-          "emotionalSuppression": 0.8
+          "practicalRepair": 1,
+          "systemFirst": 0.8,
+          "peaceSeeking": 1,
+          "orderSeeking": 0.8
         },
         "positive": {
-          "selfProtection": 1
+          "clearNextStep": 1,
+          "keptRoomGentle": 0.8,
+          "keptGround": 1
         },
         "negative": {
-          "immediateDisclosure": -0.8
+          "looseProcess": -0.8,
+          "unspokenResentment": -0.7,
+          "chaoticDrift": -0.7
         },
-        "reliability": 0.8
+        "work": {
+          "planner": 0.8,
+          "executor": 0.6
+        },
+        "disc": {
+          "C": 0.4,
+          "D": 0.4
+        },
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "bigFive": {
+          "Conscientiousness": 0.6
+        },
+        "hexaco": {
+          "Conscientiousness": 0.6
+        },
+        "values": {
+          "security": 0.7
+        },
+        "environment": {
+          "organizedSpace": 0.6,
+          "familiarPlace": 0.4
+        },
+        "reliability": 0.84
       }
-    }
-  },
-  {
-    "id": "rel_016",
-    "kind": "singleChoice",
-    "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
     },
-    "prompt": "Di depan minimarket, ia berkata, “aku cuma bercanda.” Tapi lelucon itu memakai rahasia yang dulu kau titipkan pelan-pelan.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
-    "options": [
-      {
-        "id": "rel_016_a",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_016_b",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_016_c",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_016_d",
-        "text": "Aku berkata, “aku mau ngerti dulu, tapi jangan pakai kalimat yang bikin kita saling luka.”",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      }
-    ],
-    "reliability": 0.8,
+    "reliability": 0.84,
     "targetSystems": [
       "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "values",
       "evidence",
       "positive",
       "negative"
@@ -2905,407 +3606,11 @@ export const RELATIONSHIP_QUESTIONS: QuestionItem[] = [
       "relationship",
       "communication",
       "conflict",
-      "enneagram",
-      "instinct",
+      "values",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "rel_017",
-    "kind": "ranking",
-    "context": {
-      "domain": "friendship",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Teman meminta penjelasan setelah kau menjauh. Di meja ada dua minuman yang mulai berair.",
-    "instruction": "Urutkan dari yang paling mungkin kau lakukan sampai yang paling jauh.",
-    "options": [
-      {
-        "id": "rel_017_a",
-        "text": "Aku mengajak duduk di tempat yang lebih sepi dan mulai dari bagian yang paling tidak menusuk.",
-        "subtleMeaning": "repair",
-        "weights": {
-          "relationship": {
-            "repairSeeking": 2,
-            "withdrawalWhenHurt": -0.5
-          },
-          "communication": {
-            "gentle": 1,
-            "direct": 0.4
-          },
-          "conflict": {
-            "repairAttempt": 1
-          },
-          "enneagram": {
-            "2": 0.8,
-            "9": 0.5
-          },
-          "instinct": {
-            "so": 0.5
-          },
-          "evidence": {
-            "repairAttempt": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "bridgeMaking": 1
-          },
-          "negative": {
-            "hardCutoff": -0.8
-          },
-          "reliability": 0.81
-        }
-      },
-      {
-        "id": "rel_017_b",
-        "text": "Aku menatapnya dan berkata, “kalimat itu nggak bisa lewat begitu saja.”",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_017_c",
-        "text": "Aku berhenti menjelaskan setelah sadar penjelasanku hanya dipakai untuk menunda batasku.",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_017_d",
-        "text": "Aku menulis panjang, menghapus setengahnya, lalu tetap bertanya, “kita baik-baik saja nggak?”",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_017_e",
-        "text": "Aku keluar sebentar, mencuci tangan terlalu lama, dan menunda bicara sampai kalimatku tidak tajam.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
-    "rankLimit": 5
-  },
-  {
-    "id": "rel_018",
-    "kind": "singleChoice",
-    "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Seseorang hadir terus, tapi setiap hadirnya meminta balasan cepat. HP-mu seperti tidak pernah boleh tidur.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
-    "options": [
-      {
-        "id": "rel_018_a",
-        "text": "Aku berkata pelan, “aku sayang, tapi aku nggak bisa menerima cara bicara seperti ini.”",
-        "subtleMeaning": "boundary",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1.6,
-            "secureLeaning": 0.6
-          },
-          "communication": {
-            "restrained": 0.8,
-            "direct": 0.8
-          },
-          "conflict": {
-            "boundaryCutoff": 1
-          },
-          "enneagram": {
-            "4": 0.5,
-            "8": 0.6
-          },
-          "instinct": {
-            "sp": 0.5
-          },
-          "evidence": {
-            "boundarySetting": 1,
-            "selfRespect": 0.8
-          },
-          "positive": {
-            "selfRespect": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.9
-          },
-          "reliability": 0.82
-        }
-      },
-      {
-        "id": "rel_018_b",
-        "text": "Aku membalas singkat, lalu menaruh HP terbalik sampai dadaku berhenti berisik.",
-        "subtleMeaning": "withdraw",
-        "weights": {
-          "relationship": {
-            "withdrawalWhenHurt": 2,
-            "reassuranceSeeking": -0.4
-          },
-          "communication": {
-            "minimalResponse": 1,
-            "restrained": 0.8
-          },
-          "conflict": {
-            "quietWithdrawal": 1
-          },
-          "enneagram": {
-            "5": 0.7,
-            "9": 0.7
-          },
-          "instinct": {
-            "sp": 0.7
-          },
-          "evidence": {
-            "withdrawal": 1,
-            "emotionalSuppression": 0.8
-          },
-          "positive": {
-            "selfProtection": 1
-          },
-          "negative": {
-            "immediateDisclosure": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "rel_018_c",
-        "text": "Aku mencari tanda kecil bahwa aku belum benar-benar ditinggalkan.",
-        "subtleMeaning": "reassure",
-        "weights": {
-          "relationship": {
-            "reassuranceSeeking": 1.8,
-            "anxiousLeaning": 1,
-            "autonomyProtection": -0.5
-          },
-          "communication": {
-            "overExplaining": 1
-          },
-          "conflict": {
-            "appeasement": 0.7
-          },
-          "enneagram": {
-            "6": 1,
-            "2": 0.6
-          },
-          "instinct": {
-            "sx": 0.6
-          },
-          "evidence": {
-            "rejectionSensitivity": 1,
-            "overExplaining": 0.8
-          },
-          "positive": {
-            "connectionCare": 1
-          },
-          "negative": {
-            "coldDistance": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "rel_018_d",
-        "text": "Aku meminta ia mengulang ucapannya tanpa tawa, supaya jelas apa yang sebenarnya ia maksud.",
-        "subtleMeaning": "direct",
-        "weights": {
-          "relationship": {
-            "autonomyProtection": 1,
-            "secureLeaning": 0.5
-          },
-          "communication": {
-            "direct": 1.6
-          },
-          "conflict": {
-            "directConfrontation": 1.4
-          },
-          "enneagram": {
-            "8": 0.8,
-            "1": 0.5
-          },
-          "instinct": {
-            "sx": 0.4
-          },
-          "evidence": {
-            "directEngagement": 1,
-            "boundarySetting": 0.8
-          },
-          "positive": {
-            "cleanBoundary": 1
-          },
-          "negative": {
-            "overAccommodation": -0.8
-          },
-          "reliability": 0.82
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "relationship",
-      "communication",
-      "conflict",
-      "enneagram",
-      "instinct",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   }
 ];

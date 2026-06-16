@@ -3,135 +3,281 @@ import type { QuestionItem } from "../types";
 export const STRESS_QUESTIONS: QuestionItem[] = [
   {
     "id": "stress_001",
-    "kind": "firstReaction",
+    "kind": "forcedChoice",
     "context": {
       "domain": "stress",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "public",
       "emotionalCharge": "high"
     },
-    "prompt": "Di depan beberapa orang, seseorang menaikkan suara dan menyebut kesalahanmu. Gelas plastik di tanganmu mengerut karena terlalu kuat digenggam.",
-    "instruction": "Pilih reaksi pertama sebelum kau sempat merapikan wajah.",
+    "prompt": "Namamu disebut dengan nada tajam di depan ruangan. Pulpen di tanganmu terasa licin.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_001_a",
-        "text": "Aku menegakkan badan dan berkata, “jangan bicara seperti itu ke aku.”",
-        "subtleMeaning": "fight",
+        "text": "Aku diam satu tarikan napas, menaruh pulpen, lalu menjawab hanya bagian yang perlu dijawab.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
-          },
-          "defense": {
-            "control": 0.8
+          "enneagram": {
+            "9": 1.2,
+            "5": 1.0
           },
           "coreFear": {
-            "beingControlled": 1
+            "conflict": 0.7
           },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
+          },
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "isolate": 0.7,
+            "intellectualize": 0.5
+          },
+          "defense": {
+            "withdrawal": 1.0,
+            "intellectualization": 0.8
           },
           "positive": {
-            "protectiveFire": 1
+            "keptRoomGentle": 0.8,
+            "cleanReason": 1,
+            "protectedEnergy": 1
           },
           "negative": {
-            "prematureAttack": -0.8
+            "unspokenResentment": -0.7,
+            "socialGuessing": -0.7,
+            "unreachedHeart": -0.7
           },
-          "reliability": 0.8
+          "evidence": {
+            "peaceSeeking": 1,
+            "internalCheck": 1,
+            "truthSeeking": 0.8,
+            "analysisLoop": 1
+          },
+          "cognitive": {
+            "Ti": 2,
+            "Fe": -0.5
+          },
+          "mbtiAxis": {
+            "T": 1,
+            "I": 0.5
+          },
+          "stackRole": {
+            "dominant": 0.6,
+            "critical": 0.3
+          },
+          "decision": {
+            "evidenceBased": 0.9,
+            "reflective": 0.5
+          },
+          "learning": {
+            "analytical": 1.2,
+            "solitary": 1.0
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_001_b",
-        "text": "Aku diam beberapa detik, mendengar suara AC terlalu jelas, lalu menahan semua kalimat di tenggorokan.",
-        "subtleMeaning": "freeze",
+        "text": "Aku menatap orang itu dan berkata, “tolong ulangi bagian yang kau maksud, supaya tidak jadi tuduhan kosong.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
           },
-          "defense": {
-            "emotionalSuppression": 1
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
           },
-          "coreFear": {
-            "makingWrongMove": 1
+          "values": {
+            "justice": 0.8,
+            "truth": 0.4
           },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+          "conflict": {
+            "directConfrontation": 0.7
           },
           "positive": {
-            "pauseBeforeDamage": 1
+            "stoodForFairness": 1,
+            "presentMove": 1,
+            "clearWords": 0.6
           },
           "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_001_c",
-        "text": "Aku tersenyum kecil dan bilang, “nggak apa-apa,” meski tanganku sudah dingin.",
-        "subtleMeaning": "fawn",
-        "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
-          },
-          "defense": {
-            "peoplePleasing": 1
-          },
-          "coreFear": {
-            "beingRejected": 1
+            "easySilence": -0.8,
+            "overWaiting": -0.8,
+            "muddyMessage": -0.5
           },
           "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
+            "justiceSeeking": 1,
+            "directEngagement": 1.7,
+            "actionFirst": 1
           },
-          "positive": {
-            "deescalationCare": 1
+          "cognitive": {
+            "Se": 2,
+            "Ni": -0.6
           },
-          "negative": {
-            "selfAbandonment": -0.8
+          "mbtiAxis": {
+            "E": 0.6,
+            "S": 1,
+            "P": 0.5
           },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_001_d",
-        "text": "Aku mencari alasan untuk keluar dari ruangan sebelum wajahku bicara lebih banyak daripada mulutku.",
-        "subtleMeaning": "flight",
-        "weights": {
+          "stackRole": {
+            "dominant": 0.5,
+            "inferior": 0.3
+          },
           "stress": {
-            "flight": 2,
-            "fight": -0.4
+            "fight": 0.5
           },
-          "defense": {
-            "avoidance": 1
+          "disc": {
+            "D": 0.5
           },
-          "coreFear": {
-            "beingTrapped": 1
+          "communication": {
+            "direct": 0.5,
+            "gentle": 0.3
           },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
-          },
-          "positive": {
-            "exitAwareness": 1
-          },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_001_a",
+      "text": "Aku diam satu tarikan napas, menaruh pulpen, lalu menjawab hanya bagian yang perlu dijawab.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2,
+          "5": 1.0
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "isolate": 0.7,
+          "intellectualize": 0.5
+        },
+        "defense": {
+          "withdrawal": 1.0,
+          "intellectualization": 0.8
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "cleanReason": 1,
+          "protectedEnergy": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "socialGuessing": -0.7,
+          "unreachedHeart": -0.7
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "internalCheck": 1,
+          "truthSeeking": 0.8,
+          "analysisLoop": 1
+        },
+        "cognitive": {
+          "Ti": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "T": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.6,
+          "critical": 0.3
+        },
+        "decision": {
+          "evidenceBased": 0.9,
+          "reflective": 0.5
+        },
+        "learning": {
+          "analytical": 1.2,
+          "solitary": 1.0
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_001_b",
+      "text": "Aku menatap orang itu dan berkata, “tolong ulangi bagian yang kau maksud, supaya tidak jadi tuduhan kosong.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.4
+        },
+        "conflict": {
+          "directConfrontation": 0.7
+        },
+        "positive": {
+          "stoodForFairness": 1,
+          "presentMove": 1,
+          "clearWords": 0.6
+        },
+        "negative": {
+          "easySilence": -0.8,
+          "overWaiting": -0.8,
+          "muddyMessage": -0.5
+        },
+        "evidence": {
+          "justiceSeeking": 1,
+          "directEngagement": 1.7,
+          "actionFirst": 1
+        },
+        "cognitive": {
+          "Se": 2,
+          "Ni": -0.6
+        },
+        "mbtiAxis": {
+          "E": 0.6,
+          "S": 1,
+          "P": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "inferior": 0.3
+        },
+        "stress": {
+          "fight": 0.5
+        },
+        "disc": {
+          "D": 0.5
+        },
+        "communication": {
+          "direct": 0.5,
+          "gentle": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
@@ -139,445 +285,858 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_002",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
       "domain": "money",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "pressureLevel": "crisis",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Saldo tinggal sedikit. Di meja ada tagihan mendadak, dan seseorang di rumah bertanya, “bisa dibayar hari ini?”",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Di kasur, struk belanja berserakan. Ada kebutuhan mendadak, dan saldo di layar terlihat terlalu kecil.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_002_a",
-        "text": "Aku membuka catatan, membuat daftar cepat, dan memegang satu bagian yang masih bisa diatur.",
-        "subtleMeaning": "control",
+        "text": "Aku membuat daftar mana yang harus dibayar hari ini dan mana yang bisa dinegosiasikan.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
-          },
-          "coreFear": {
-            "losingControl": 1
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
           },
           "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "orderSeeking": 1,
+            "certaintySeeking": 1
           },
           "positive": {
-            "stabilizingMove": 1
+            "keptSafe": 1,
+            "madeItNeat": 1,
+            "checkedRisk": 1
           },
           "negative": {
-            "rigidGrip": -0.8
+            "ignoredBody": -0.9,
+            "messyLeap": -0.7,
+            "blindLeap": -0.8
           },
-          "reliability": 0.8
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "stress": {
+            "control": 0.6
+          },
+          "riasec": {
+            "Conventional": 0.9
+          },
+          "disc": {
+            "C": 0.7
+          },
+          "work": {
+            "refiner": 0.8,
+            "planner": 0.4
+          },
+          "learning": {
+            "structured": 0.6,
+            "repetitionBased": 0.4
+          },
+          "enneagram": {
+            "6": 1.1
+          },
+          "coreFear": {
+            "unsafe": 0.8
+          },
+          "coreDesire": {
+            "certainty": 0.7
+          },
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
+          },
+          "relationship": {
+            "reassuranceSeeking": 0.6
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_002_b",
-        "text": "Aku duduk di tepi kasur dan mendadak tidak bisa memilih apa pun, bahkan membalas pesan sederhana.",
-        "subtleMeaning": "collapse",
+        "text": "Aku menghubungi satu orang yang bisa dipercaya sebelum kepalaku membuat skenario sendiri.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
-          },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
+          "enneagram": {
+            "6": 1.1
           },
           "coreFear": {
-            "notEnough": 1
+            "unsafe": 0.8
           },
-          "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+          "coreDesire": {
+            "certainty": 0.7
           },
-          "positive": {
-            "honestLimit": 1
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
           },
-          "negative": {
-            "vanishingUnderLoad": -0.7
-          },
-          "reliability": 0.76
-        }
-      },
-      {
-        "id": "stress_002_c",
-        "text": "Aku memisahkan kejadian itu menjadi beberapa bagian kecil agar tidak tenggelam di perasaan sendiri.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
-          },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
-          },
-          "coreFear": {
-            "beingOverwhelmed": 1
-          },
-          "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
+          "relationship": {
+            "reassuranceSeeking": 0.6,
+            "repairSeeking": 1.2,
+            "secureLeaning": 1.0
           },
           "positive": {
-            "clearDistance": 1
+            "checkedRisk": 1,
+            "softRepair": 1,
+            "keptConnection": 0.6
           },
           "negative": {
-            "feelingDelay": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_002_d",
-        "text": "Aku mengambil tas dan memilih jarak dulu daripada meledak di depan orang.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
+            "blindLeap": -0.8,
+            "coldCut": -0.8,
+            "leftUnsaid": -0.5
           },
           "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
+            "certaintySeeking": 1,
+            "peopleFirst": 1,
+            "repairSeeking": 1.3
           },
-          "positive": {
-            "exitAwareness": 1
+          "cognitive": {
+            "Fe": 2,
+            "Ti": -0.5
           },
-          "negative": {
-            "unfinishedRepair": -0.8
+          "mbtiAxis": {
+            "F": 1,
+            "E": 0.5,
+            "J": 0.3
           },
-          "reliability": 0.78
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.3
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_002_a",
+      "text": "Aku membuat daftar mana yang harus dibayar hari ini dan mana yang bisa dinegosiasikan.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "evidence": {
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "orderSeeking": 1,
+          "certaintySeeking": 1
+        },
+        "positive": {
+          "keptSafe": 1,
+          "madeItNeat": 1,
+          "checkedRisk": 1
+        },
+        "negative": {
+          "ignoredBody": -0.9,
+          "messyLeap": -0.7,
+          "blindLeap": -0.8
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "stress": {
+          "control": 0.6
+        },
+        "riasec": {
+          "Conventional": 0.9
+        },
+        "disc": {
+          "C": 0.7
+        },
+        "work": {
+          "refiner": 0.8,
+          "planner": 0.4
+        },
+        "learning": {
+          "structured": 0.6,
+          "repetitionBased": 0.4
+        },
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "relationship": {
+          "reassuranceSeeking": 0.6
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_002_b",
+      "text": "Aku menghubungi satu orang yang bisa dipercaya sebelum kepalaku membuat skenario sendiri.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "relationship": {
+          "reassuranceSeeking": 0.6,
+          "repairSeeking": 1.2,
+          "secureLeaning": 1.0
+        },
+        "positive": {
+          "checkedRisk": 1,
+          "softRepair": 1,
+          "keptConnection": 0.6
+        },
+        "negative": {
+          "blindLeap": -0.8,
+          "coldCut": -0.8,
+          "leftUnsaid": -0.5
+        },
+        "evidence": {
+          "certaintySeeking": 1,
+          "peopleFirst": 1,
+          "repairSeeking": 1.3
+        },
+        "cognitive": {
+          "Fe": 2,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.3
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
-      "defense",
+      "decision",
+      "instinct",
       "coreFear",
-      "stackRole",
+      "defense",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "stress",
-      "defense",
+      "decision",
+      "instinct",
       "coreFear",
-      "stackRole",
+      "defense",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_003",
-    "kind": "hiddenReaction",
+    "kind": "forcedChoice",
     "context": {
       "domain": "work",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "public",
       "emotionalCharge": "high"
     },
-    "prompt": "Rencana yang kau pegang hancur saat semua orang sudah menunggu. Proyektor menyala, tapi file yang benar tidak terbuka.",
-    "instruction": "Pilih reaksi yang mungkin tidak terlihat dari luar.",
+    "prompt": "Rencana acara runtuh lima menit sebelum mulai. Kabel hilang, orang bertanya, dan suara ruangan makin keras.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_003_a",
-        "text": "Aku merapikan suara dan tetap menjawab seperti orang yang baik-baik saja.",
-        "subtleMeaning": "perform",
+        "text": "Aku memilih satu masalah yang paling terlihat dan menyelesaikannya dulu, baru memikirkan sisanya.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "perform": 2,
-            "collapse": -0.6
+          "cognitive": {
+            "Se": 2,
+            "Ni": -0.6,
+            "Te": 2,
+            "Fi": -0.5
           },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
+          "mbtiAxis": {
+            "E": 0.6,
+            "S": 1,
+            "P": 0.5,
+            "T": 0.8,
+            "J": 1
           },
-          "coreFear": {
-            "beingSeenFailing": 1
+          "stackRole": {
+            "dominant": 1.0,
+            "inferior": 0.3,
+            "auxiliary": 0.6
           },
           "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
+            "actionFirst": 1,
+            "directEngagement": 0.9,
+            "practicalRepair": 2,
+            "systemFirst": 0.8
           },
           "positive": {
-            "staysFunctional": 1
+            "presentMove": 1,
+            "handsOnRepair": 1,
+            "clearNextStep": 1
           },
           "negative": {
-            "hiddenBurnout": -0.8
+            "overWaiting": -0.8,
+            "emptyTalk": -0.7,
+            "looseProcess": -0.8
           },
-          "reliability": 0.78
+          "stress": {
+            "fight": 0.5
+          },
+          "disc": {
+            "D": 0.9,
+            "C": 0.4
+          },
+          "riasec": {
+            "Realistic": 1.0
+          },
+          "work": {
+            "executor": 1.2,
+            "stabilizer": 0.4,
+            "planner": 0.8
+          },
+          "learning": {
+            "experiential": 0.7
+          },
+          "bigFive": {
+            "Conscientiousness": 0.3
+          },
+          "hexaco": {
+            "Conscientiousness": 0.3
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_003_b",
-        "text": "Aku menghitung uang, waktu, dan orang yang bisa dihubungi sebelum membiarkan takut masuk.",
-        "subtleMeaning": "control",
+        "text": "Aku mengumpulkan dua orang terdekat dan berkata, “kita bagi: satu cari kabel, satu tahan orang di depan.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
+          "riasec": {
+            "Enterprising": 0.8
           },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
+          "disc": {
+            "D": 1.1,
+            "I": 0.8,
+            "C": 0.4
           },
-          "coreFear": {
-            "losingControl": 1
+          "work": {
+            "leader": 0.7,
+            "challenger": 0.4,
+            "planner": 0.8,
+            "executor": 0.6
           },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
+          "decision": {
+            "fastAction": 0.5
           },
           "positive": {
-            "stabilizingMove": 1
+            "tookResponsibility": 1,
+            "clearNextStep": 1,
+            "socialBridge": 1
           },
           "negative": {
-            "rigidGrip": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_003_c",
-        "text": "Aku menatap satu titik di meja sambil mencoba menebak langkah yang paling tidak merusak.",
-        "subtleMeaning": "freeze",
-        "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
-          },
-          "defense": {
-            "emotionalSuppression": 1
-          },
-          "coreFear": {
-            "makingWrongMove": 1
+            "waitingPermission": -0.7,
+            "looseProcess": -0.8,
+            "privateTunnel": -0.6
           },
           "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+            "actionFirst": 0.8,
+            "practicalRepair": 1,
+            "systemFirst": 0.8,
+            "statusAwareness": 0.7,
+            "visibleRole": 0.7
           },
-          "positive": {
-            "pauseBeforeDamage": 1
+          "cognitive": {
+            "Te": 2,
+            "Fi": -0.5
           },
-          "negative": {
-            "delayedAction": -0.8
+          "mbtiAxis": {
+            "T": 0.8,
+            "J": 1
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_003_d",
-        "text": "Aku memotong kalimatnya sebelum semua orang ikut percaya pada versinya.",
-        "subtleMeaning": "fight",
-        "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
+          "stackRole": {
+            "auxiliary": 0.6,
+            "dominant": 0.5
           },
-          "defense": {
-            "control": 0.8
+          "instinct": {
+            "so": 1.5,
+            "sp": -0.2
           },
-          "coreFear": {
-            "beingControlled": 1
+          "relationship": {
+            "belongingSeeking": 0.8
           },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+          "communication": {
+            "expressive": 0.5,
+            "gentle": 0.3
           },
-          "positive": {
-            "protectiveFire": 1
-          },
-          "negative": {
-            "prematureAttack": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_003_a",
+      "text": "Aku memilih satu masalah yang paling terlihat dan menyelesaikannya dulu, baru memikirkan sisanya.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Se": 2,
+          "Ni": -0.6,
+          "Te": 2,
+          "Fi": -0.5
+        },
+        "mbtiAxis": {
+          "E": 0.6,
+          "S": 1,
+          "P": 0.5,
+          "T": 0.8,
+          "J": 1
+        },
+        "stackRole": {
+          "dominant": 1.0,
+          "inferior": 0.3,
+          "auxiliary": 0.6
+        },
+        "evidence": {
+          "actionFirst": 1,
+          "directEngagement": 0.9,
+          "practicalRepair": 2,
+          "systemFirst": 0.8
+        },
+        "positive": {
+          "presentMove": 1,
+          "handsOnRepair": 1,
+          "clearNextStep": 1
+        },
+        "negative": {
+          "overWaiting": -0.8,
+          "emptyTalk": -0.7,
+          "looseProcess": -0.8
+        },
+        "stress": {
+          "fight": 0.5
+        },
+        "disc": {
+          "D": 0.9,
+          "C": 0.4
+        },
+        "riasec": {
+          "Realistic": 1.0
+        },
+        "work": {
+          "executor": 1.2,
+          "stabilizer": 0.4,
+          "planner": 0.8
+        },
+        "learning": {
+          "experiential": 0.7
+        },
+        "bigFive": {
+          "Conscientiousness": 0.3
+        },
+        "hexaco": {
+          "Conscientiousness": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_003_b",
+      "text": "Aku mengumpulkan dua orang terdekat dan berkata, “kita bagi: satu cari kabel, satu tahan orang di depan.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "riasec": {
+          "Enterprising": 0.8
+        },
+        "disc": {
+          "D": 1.1,
+          "I": 0.8,
+          "C": 0.4
+        },
+        "work": {
+          "leader": 0.7,
+          "challenger": 0.4,
+          "planner": 0.8,
+          "executor": 0.6
+        },
+        "decision": {
+          "fastAction": 0.5
+        },
+        "positive": {
+          "tookResponsibility": 1,
+          "clearNextStep": 1,
+          "socialBridge": 1
+        },
+        "negative": {
+          "waitingPermission": -0.7,
+          "looseProcess": -0.8,
+          "privateTunnel": -0.6
+        },
+        "evidence": {
+          "actionFirst": 0.8,
+          "practicalRepair": 1,
+          "systemFirst": 0.8,
+          "statusAwareness": 0.7,
+          "visibleRole": 0.7
+        },
+        "cognitive": {
+          "Te": 2,
+          "Fi": -0.5
+        },
+        "mbtiAxis": {
+          "T": 0.8,
+          "J": 1
+        },
+        "stackRole": {
+          "auxiliary": 0.6,
+          "dominant": 0.5
+        },
+        "instinct": {
+          "so": 1.5,
+          "sp": -0.2
+        },
+        "relationship": {
+          "belongingSeeking": 0.8
+        },
+        "communication": {
+          "expressive": 0.5,
+          "gentle": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "work",
+      "disc",
+      "decision",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "work",
+      "disc",
+      "decision",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_004",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
       "domain": "identity",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Seseorang memujimu di depan orang banyak. Semua tersenyum, tapi bagian dalam dirimu justru mundur selangkah.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Malam setelah dipuji, kau malah duduk lama di tepi kasur. Kata-kata baik itu seperti tidak menemukan tempat di tubuhmu.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_004_a",
-        "text": "Aku menyelesaikan tugas dulu, lalu baru membiarkan tangan gemetar setelah pintu tertutup.",
-        "subtleMeaning": "perform",
+        "text": "Aku menyimpan pujian itu tanpa membantah, walau belum sepenuhnya bisa percaya.",
+        "subtleMeaning": "hidden",
         "weights": {
+          "bigFive": {
+            "Neuroticism": 0.8
+          },
+          "hexaco": {
+            "Emotionality": 0.9
+          },
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
+          },
           "stress": {
-            "perform": 2,
-            "collapse": -0.6
-          },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
-          },
-          "coreFear": {
-            "beingSeenFailing": 1
-          },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
+            "collapse": 0.4,
+            "freeze": 0.8,
+            "fawn": 0.3
           },
           "positive": {
-            "staysFunctional": 1
+            "honestTenderness": 0.8,
+            "keptRoomGentle": 0.8,
+            "quietCare": 0.6
           },
           "negative": {
-            "hiddenBurnout": -0.8
+            "floodedReaction": -0.5,
+            "unspokenResentment": -0.7,
+            "loudPromise": -0.5
           },
-          "reliability": 0.78
+          "evidence": {
+            "emotionalExpression": 0.8,
+            "peaceSeeking": 1,
+            "peopleFirst": 0.3
+          },
+          "enneagram": {
+            "9": 1.2
+          },
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
+          },
+          "defense": {
+            "withdrawal": 0.5
+          },
+          "loveStyle": {
+            "steadyPresence": 0.4,
+            "practicalCare": 0.3
+          },
+          "relationship": {
+            "secureLeaning": 0.3
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_004_b",
-        "text": "Aku mematikan lampu, bukan karena ingin tidur, tapi karena semua terasa terlalu penuh.",
-        "subtleMeaning": "collapse",
+        "text": "Aku membuka catatan dan menulis apa yang benar-benar kulakukan sampai pujian itu mungkin masuk akal.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
+          "riasec": {
+            "Investigative": 1.0
           },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
+          "work": {
+            "researcher": 0.8,
+            "leader": 0.5,
+            "executor": 0.5
           },
-          "coreFear": {
-            "notEnough": 1
+          "learning": {
+            "analytical": 0.6,
+            "structured": 0.3
           },
-          "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+          "attitudinalPsyche": {
+            "L_confident": 0.6
           },
           "positive": {
-            "honestLimit": 1
+            "checkedBeforeMoving": 1,
+            "cleanHands": 1,
+            "visibleProgress": 1
           },
           "negative": {
-            "vanishingUnderLoad": -0.7
-          },
-          "reliability": 0.76
-        }
-      },
-      {
-        "id": "stress_004_c",
-        "text": "Aku mencari alasan yang masuk akal dulu, karena kalau tidak, dadaku akan mengambil alih.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
-          },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
-          },
-          "coreFear": {
-            "beingOverwhelmed": 1
+            "performativeRush": -0.6,
+            "smoothLie": -0.8,
+            "identityCollapse": -0.5
           },
           "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
+            "truthSeeking": 2,
+            "achievementSeeking": 1
           },
-          "positive": {
-            "clearDistance": 1
+          "hexaco": {
+            "HonestyHumility": 1.0
           },
-          "negative": {
-            "feelingDelay": -0.8
+          "moral": {
+            "truthBased": 0.8,
+            "purityIntegrityBased": 0.4
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_004_d",
-        "text": "Aku menenangkan orang lain dulu supaya ruangan tidak pecah, walau dadaku sendiri berantakan.",
-        "subtleMeaning": "fawn",
-        "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
+          "values": {
+            "truth": 0.8,
+            "achievement": 0.8,
+            "competence": 0.4
           },
-          "defense": {
-            "peoplePleasing": 1
+          "enneagram": {
+            "3": 1.1
           },
           "coreFear": {
-            "beingRejected": 1
+            "failure": 0.7
           },
-          "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
+          "coreDesire": {
+            "worthThroughAchievement": 0.7
           },
-          "positive": {
-            "deescalationCare": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.8
-          },
-          "reliability": 0.78
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_004_a",
+      "text": "Aku menyimpan pujian itu tanpa membantah, walau belum sepenuhnya bisa percaya.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "stress": {
+          "collapse": 0.4,
+          "freeze": 0.8,
+          "fawn": 0.3
+        },
+        "positive": {
+          "honestTenderness": 0.8,
+          "keptRoomGentle": 0.8,
+          "quietCare": 0.6
+        },
+        "negative": {
+          "floodedReaction": -0.5,
+          "unspokenResentment": -0.7,
+          "loudPromise": -0.5
+        },
+        "evidence": {
+          "emotionalExpression": 0.8,
+          "peaceSeeking": 1,
+          "peopleFirst": 0.3
+        },
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "loveStyle": {
+          "steadyPresence": 0.4,
+          "practicalCare": 0.3
+        },
+        "relationship": {
+          "secureLeaning": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_004_b",
+      "text": "Aku membuka catatan dan menulis apa yang benar-benar kulakukan sampai pujian itu mungkin masuk akal.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "riasec": {
+          "Investigative": 1.0
+        },
+        "work": {
+          "researcher": 0.8,
+          "leader": 0.5,
+          "executor": 0.5
+        },
+        "learning": {
+          "analytical": 0.6,
+          "structured": 0.3
+        },
+        "attitudinalPsyche": {
+          "L_confident": 0.6
+        },
+        "positive": {
+          "checkedBeforeMoving": 1,
+          "cleanHands": 1,
+          "visibleProgress": 1
+        },
+        "negative": {
+          "performativeRush": -0.6,
+          "smoothLie": -0.8,
+          "identityCollapse": -0.5
+        },
+        "evidence": {
+          "truthSeeking": 2,
+          "achievementSeeking": 1
+        },
+        "hexaco": {
+          "HonestyHumility": 1.0
+        },
+        "moral": {
+          "truthBased": 0.8,
+          "purityIntegrityBased": 0.4
+        },
+        "values": {
+          "truth": 0.8,
+          "achievement": 0.8,
+          "competence": 0.4
+        },
+        "enneagram": {
+          "3": 1.1
+        },
+        "coreFear": {
+          "failure": 0.7
+        },
+        "coreDesire": {
+          "worthThroughAchievement": 0.7
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
       "coreFear",
-      "stackRole",
+      "coreDesire",
+      "attitudinalPsyche",
       "evidence",
       "positive",
       "negative"
@@ -586,145 +1145,312 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
       "stress",
       "defense",
       "coreFear",
-      "stackRole",
+      "coreDesire",
+      "attitudinalPsyche",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_005",
-    "kind": "firstReaction",
+    "kind": "forcedChoice",
     "context": {
       "domain": "romance",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Kau menemukan bukti kecil bahwa orang dekatmu tidak sepenuhnya jujur. Layar HP terasa terlalu terang di kamar gelap.",
-    "instruction": "Pilih reaksi pertama sebelum kau sempat merapikan wajah.",
+    "prompt": "Kau tahu seseorang berbohong. Belum ada bukti penuh, tapi kalimatnya berubah setiap kali ditanya.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_005_a",
-        "text": "Aku menegakkan badan dan berkata, “jangan bicara seperti itu ke aku.”",
-        "subtleMeaning": "fight",
+        "text": "Aku berhenti mengejar malam itu, menyimpan detailnya, dan menunggu saat yang lebih jelas untuk bicara.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
+          "cognitive": {
+            "Ni": 2,
+            "Se": -0.6
           },
-          "defense": {
-            "control": 0.8
+          "mbtiAxis": {
+            "I": 0.6,
+            "N": 1,
+            "J": 0.4
           },
-          "coreFear": {
-            "beingControlled": 1
+          "stackRole": {
+            "dominant": 0.6,
+            "opposing": 0.4
           },
           "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+            "observeFirst": 1,
+            "indirectEngagement": 0.8,
+            "certaintySeeking": 1,
+            "analysisLoop": 1
           },
           "positive": {
-            "protectiveFire": 1
+            "patientReading": 1,
+            "checkedRisk": 1,
+            "protectedEnergy": 1
           },
           "negative": {
-            "prematureAttack": -0.8
+            "rushedMove": -0.8,
+            "blindLeap": -0.8,
+            "unreachedHeart": -0.7
           },
-          "reliability": 0.8
+          "socionics": {
+            "intuitiveEthical": 0.5
+          },
+          "quadra": {
+            "Beta": 0.25,
+            "Delta": 0.2
+          },
+          "enneagram": {
+            "6": 1.1,
+            "5": 1.0
+          },
+          "coreFear": {
+            "unsafe": 0.8
+          },
+          "coreDesire": {
+            "certainty": 0.7
+          },
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
+          },
+          "relationship": {
+            "reassuranceSeeking": 0.6
+          },
+          "stress": {
+            "isolate": 0.7,
+            "intellectualize": 0.5
+          },
+          "defense": {
+            "intellectualization": 0.8,
+            "withdrawal": 0.5
+          },
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_005_b",
-        "text": "Aku diam beberapa detik, mendengar suara AC terlalu jelas, lalu menahan semua kalimat di tenggorokan.",
-        "subtleMeaning": "freeze",
+        "text": "Aku bertanya satu kali lagi dengan kalimat sederhana, “jawabanmu yang benar yang mana?”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
           },
-          "defense": {
-            "emotionalSuppression": 1
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
           },
-          "coreFear": {
-            "makingWrongMove": 1
+          "values": {
+            "justice": 0.8,
+            "truth": 0.9,
+            "autonomy": 0.7
           },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+          "conflict": {
+            "directConfrontation": 0.7,
+            "boundaryCutoff": 0.5
           },
           "positive": {
-            "pauseBeforeDamage": 1
+            "stoodForFairness": 1,
+            "cleanReason": 1,
+            "keptSelfRespect": 1
           },
           "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_005_c",
-        "text": "Aku mencari alasan untuk keluar dari ruangan sebelum wajahku bicara lebih banyak daripada mulutku.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
+            "easySilence": -0.8,
+            "socialGuessing": -0.7,
+            "selfErasure": -0.8
           },
           "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
+            "justiceSeeking": 1,
+            "directEngagement": 0.4,
+            "internalCheck": 1,
+            "truthSeeking": 0.8,
+            "boundarySetting": 1,
+            "selfRespect": 0.8
           },
-          "positive": {
-            "exitAwareness": 1
+          "cognitive": {
+            "Ti": 2,
+            "Fe": -1.0,
+            "Fi": 2
           },
-          "negative": {
-            "unfinishedRepair": -0.8
+          "mbtiAxis": {
+            "T": 1,
+            "I": 1.0,
+            "F": 1
           },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_005_d",
-        "text": "Aku membuka catatan, membuat daftar cepat, dan memegang satu bagian yang masih bisa diatur.",
-        "subtleMeaning": "control",
-        "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
+          "stackRole": {
+            "dominant": 1.1,
+            "critical": 0.3,
+            "opposing": 0.4
           },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
+          "decision": {
+            "evidenceBased": 0.9,
+            "reflective": 0.5
           },
-          "coreFear": {
-            "losingControl": 1
+          "learning": {
+            "analytical": 0.7,
+            "solitary": 0.4
           },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
-          },
-          "positive": {
-            "stabilizingMove": 1
-          },
-          "negative": {
-            "rigidGrip": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_005_a",
+      "text": "Aku berhenti mengejar malam itu, menyimpan detailnya, dan menunggu saat yang lebih jelas untuk bicara.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Ni": 2,
+          "Se": -0.6
+        },
+        "mbtiAxis": {
+          "I": 0.6,
+          "N": 1,
+          "J": 0.4
+        },
+        "stackRole": {
+          "dominant": 0.6,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "observeFirst": 1,
+          "indirectEngagement": 0.8,
+          "certaintySeeking": 1,
+          "analysisLoop": 1
+        },
+        "positive": {
+          "patientReading": 1,
+          "checkedRisk": 1,
+          "protectedEnergy": 1
+        },
+        "negative": {
+          "rushedMove": -0.8,
+          "blindLeap": -0.8,
+          "unreachedHeart": -0.7
+        },
+        "socionics": {
+          "intuitiveEthical": 0.5
+        },
+        "quadra": {
+          "Beta": 0.25,
+          "Delta": 0.2
+        },
+        "enneagram": {
+          "6": 1.1,
+          "5": 1.0
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "relationship": {
+          "reassuranceSeeking": 0.6
+        },
+        "stress": {
+          "isolate": 0.7,
+          "intellectualize": 0.5
+        },
+        "defense": {
+          "intellectualization": 0.8,
+          "withdrawal": 0.5
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_005_b",
+      "text": "Aku bertanya satu kali lagi dengan kalimat sederhana, “jawabanmu yang benar yang mana?”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.9,
+          "autonomy": 0.7
+        },
+        "conflict": {
+          "directConfrontation": 0.7,
+          "boundaryCutoff": 0.5
+        },
+        "positive": {
+          "stoodForFairness": 1,
+          "cleanReason": 1,
+          "keptSelfRespect": 1
+        },
+        "negative": {
+          "easySilence": -0.8,
+          "socialGuessing": -0.7,
+          "selfErasure": -0.8
+        },
+        "evidence": {
+          "justiceSeeking": 1,
+          "directEngagement": 0.4,
+          "internalCheck": 1,
+          "truthSeeking": 0.8,
+          "boundarySetting": 1,
+          "selfRespect": 0.8
+        },
+        "cognitive": {
+          "Ti": 2,
+          "Fe": -1.0,
+          "Fi": 2
+        },
+        "mbtiAxis": {
+          "T": 1,
+          "I": 1.0,
+          "F": 1
+        },
+        "stackRole": {
+          "dominant": 1.1,
+          "critical": 0.3,
+          "opposing": 0.4
+        },
+        "decision": {
+          "evidenceBased": 0.9,
+          "reflective": 0.5
+        },
+        "learning": {
+          "analytical": 0.7,
+          "solitary": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "communication",
+      "cognitive",
       "evidence",
       "positive",
       "negative"
@@ -732,147 +1458,276 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "communication",
+      "cognitive",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_006",
-    "kind": "hiddenReaction",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "romance",
+      "domain": "daily",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Setelah memberanikan diri berkata jujur, balasannya hanya, “aku belum bisa.” Suara motor lewat terdengar jauh sekali.",
-    "instruction": "Pilih reaksi yang mungkin tidak terlihat dari luar.",
+    "prompt": "Kau bangun dengan dada berat. Hari belum mulai, tapi pesan masuk sudah meminta sesuatu darimu.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_006_a",
-        "text": "Aku duduk di tepi kasur dan mendadak tidak bisa memilih apa pun, bahkan membalas pesan sederhana.",
-        "subtleMeaning": "collapse",
+        "text": "Aku menaruh HP jauh dari kasur, minum air, dan memberi tubuhku sepuluh menit sebelum membalas.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
-          },
-          "coreFear": {
-            "notEnough": 1
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
           },
           "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "peaceSeeking": 1,
+            "moodRegulation": 0.5
           },
           "positive": {
-            "honestLimit": 1
+            "keptSafe": 1,
+            "keptRoomGentle": 0.8,
+            "foundBreath": 0.6
           },
           "negative": {
-            "vanishingUnderLoad": -0.7
+            "ignoredBody": -0.9,
+            "unspokenResentment": -0.7,
+            "ignoredAtmosphere": -0.5
           },
-          "reliability": 0.76
+          "environment": {
+            "privateSpace": 1.0,
+            "functionalSpace": 0.4,
+            "softCozySpace": 0.5
+          },
+          "stress": {
+            "control": 0.6,
+            "freeze": 0.5,
+            "fawn": 0.3
+          },
+          "enneagram": {
+            "9": 1.2
+          },
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
+          },
+          "defense": {
+            "withdrawal": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_006_b",
-        "text": "Aku memisahkan kejadian itu menjadi beberapa bagian kecil agar tidak tenggelam di perasaan sendiri.",
-        "subtleMeaning": "intellectualize",
+        "text": "Aku membalas satu kalimat batas: “aku lihat nanti siang, sekarang aku belum bisa.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "coreFear": {
-            "beingOverwhelmed": 1
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
           "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "directEngagement": 0.4
           },
           "positive": {
-            "clearDistance": 1
+            "keptSelfRespect": 1,
+            "keptSafe": 1,
+            "clearWords": 0.6
           },
           "negative": {
-            "feelingDelay": -0.8
+            "selfErasure": -0.8,
+            "ignoredBody": -0.9,
+            "muddyMessage": -0.5
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_006_c",
-        "text": "Aku mengambil tas dan memilih jarak dulu daripada meledak di depan orang.",
-        "subtleMeaning": "flight",
-        "weights": {
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
           "stress": {
-            "flight": 2,
-            "fight": -0.4
+            "control": 0.6
           },
-          "defense": {
-            "avoidance": 1
+          "communication": {
+            "direct": 0.5,
+            "gentle": 0.3
           },
-          "coreFear": {
-            "beingTrapped": 1
-          },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
-          },
-          "positive": {
-            "exitAwareness": 1
-          },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_006_d",
-        "text": "Aku tersenyum kecil dan bilang, “nggak apa-apa,” meski tanganku sudah dingin.",
-        "subtleMeaning": "fawn",
-        "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
-          },
-          "defense": {
-            "peoplePleasing": 1
-          },
-          "coreFear": {
-            "beingRejected": 1
-          },
-          "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "deescalationCare": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.8
-          },
-          "reliability": 0.78
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_006_a",
+      "text": "Aku menaruh HP jauh dari kasur, minum air, dan memberi tubuhku sepuluh menit sebelum membalas.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "evidence": {
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "peaceSeeking": 1,
+          "moodRegulation": 0.5
+        },
+        "positive": {
+          "keptSafe": 1,
+          "keptRoomGentle": 0.8,
+          "foundBreath": 0.6
+        },
+        "negative": {
+          "ignoredBody": -0.9,
+          "unspokenResentment": -0.7,
+          "ignoredAtmosphere": -0.5
+        },
+        "environment": {
+          "privateSpace": 1.0,
+          "functionalSpace": 0.4,
+          "softCozySpace": 0.5
+        },
+        "stress": {
+          "control": 0.6,
+          "freeze": 0.5,
+          "fawn": 0.3
+        },
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_006_b",
+      "text": "Aku membalas satu kalimat batas: “aku lihat nanti siang, sekarang aku belum bisa.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "directEngagement": 0.4
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "keptSafe": 1,
+          "clearWords": 0.6
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "ignoredBody": -0.9,
+          "muddyMessage": -0.5
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "stress": {
+          "control": 0.6
+        },
+        "communication": {
+          "direct": 0.5,
+          "gentle": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "environment",
       "evidence",
       "positive",
       "negative"
@@ -880,146 +1735,305 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "environment",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_007",
-    "kind": "singleChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "friendship",
+      "domain": "school",
       "pressureLevel": "high",
       "socialExposure": "semiPrivate",
       "emotionalCharge": "high"
     },
-    "prompt": "Di tengah acara, seseorang membuka rahasiamu sebagai bahan lucu-lucuan. Semua orang menunggu reaksimu.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
+    "prompt": "Nilaimu turun, dan teman di sebelah berkata, “tumben kamu segitu.” Kertas itu masih hangat dari printer.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_007_a",
-        "text": "Aku memotong kalimatnya sebelum semua orang ikut percaya pada versinya.",
-        "subtleMeaning": "fight",
+        "text": "Aku melipat kertasnya, diam dulu, lalu mencari bagian mana yang benar-benar salah.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
+          "cognitive": {
+            "Ti": 2,
+            "Fe": -0.5
           },
-          "defense": {
-            "control": 0.8
+          "mbtiAxis": {
+            "T": 1,
+            "I": 0.5
           },
-          "coreFear": {
-            "beingControlled": 1
+          "stackRole": {
+            "dominant": 0.6,
+            "critical": 0.3
           },
           "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+            "internalCheck": 1,
+            "truthSeeking": 1.8,
+            "analysisLoop": 1
           },
           "positive": {
-            "protectiveFire": 1
+            "cleanReason": 1,
+            "checkedBeforeMoving": 1,
+            "protectedEnergy": 1
           },
           "negative": {
-            "prematureAttack": -0.8
+            "socialGuessing": -0.7,
+            "performativeRush": -0.6,
+            "unreachedHeart": -0.7
           },
-          "reliability": 0.8
+          "decision": {
+            "evidenceBased": 0.9,
+            "reflective": 0.5
+          },
+          "learning": {
+            "analytical": 1.8,
+            "solitary": 1.0,
+            "structured": 0.3
+          },
+          "riasec": {
+            "Investigative": 1.0
+          },
+          "work": {
+            "researcher": 0.8
+          },
+          "attitudinalPsyche": {
+            "L_confident": 0.6
+          },
+          "enneagram": {
+            "5": 1.0
+          },
+          "stress": {
+            "isolate": 0.7,
+            "intellectualize": 0.5
+          },
+          "defense": {
+            "intellectualization": 0.8,
+            "withdrawal": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_007_b",
-        "text": "Aku menatap satu titik di meja sambil mencoba menebak langkah yang paling tidak merusak.",
-        "subtleMeaning": "freeze",
+        "text": "Aku menjawab, “iya, aku juga lihat. Nanti aku cek lagi,” sebelum komentar itu mengambil seluruh hariku.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
-          },
-          "defense": {
-            "emotionalSuppression": 1
+          "enneagram": {
+            "9": 1.2
           },
           "coreFear": {
-            "makingWrongMove": 1
+            "conflict": 0.7
           },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+          "coreDesire": {
+            "peace": 0.7
           },
-          "positive": {
-            "pauseBeforeDamage": 1
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3,
+            "boundaryCutoff": 0.5
           },
-          "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_007_c",
-        "text": "Aku merapikan suara dan tetap menjawab seperti orang yang baik-baik saja.",
-        "subtleMeaning": "perform",
-        "weights": {
           "stress": {
-            "perform": 2,
-            "collapse": -0.6
+            "freeze": 0.8,
+            "fawn": 0.3,
+            "collapse": 0.4
           },
           "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
-          },
-          "coreFear": {
-            "beingSeenFailing": 1
-          },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
+            "withdrawal": 0.5
           },
           "positive": {
-            "staysFunctional": 1
+            "keptRoomGentle": 0.8,
+            "keptSelfRespect": 1,
+            "honestTenderness": 0.8
           },
           "negative": {
-            "hiddenBurnout": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_007_d",
-        "text": "Aku mencari alasan untuk keluar dari ruangan sebelum wajahku bicara lebih banyak daripada mulutku.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
+            "unspokenResentment": -0.7,
+            "selfErasure": -0.8,
+            "floodedReaction": -0.5
           },
           "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
+            "peaceSeeking": 1,
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "emotionalExpression": 0.8
           },
-          "positive": {
-            "exitAwareness": 1
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "negative": {
-            "unfinishedRepair": -0.8
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "reliability": 0.78
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
+          },
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "bigFive": {
+            "Neuroticism": 0.8
+          },
+          "hexaco": {
+            "Emotionality": 0.9
+          },
+          "attitudinalPsyche": {
+            "E_insecure": 0.5,
+            "E_flexible": 0.3
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_007_a",
+      "text": "Aku melipat kertasnya, diam dulu, lalu mencari bagian mana yang benar-benar salah.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Ti": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "T": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.6,
+          "critical": 0.3
+        },
+        "evidence": {
+          "internalCheck": 1,
+          "truthSeeking": 1.8,
+          "analysisLoop": 1
+        },
+        "positive": {
+          "cleanReason": 1,
+          "checkedBeforeMoving": 1,
+          "protectedEnergy": 1
+        },
+        "negative": {
+          "socialGuessing": -0.7,
+          "performativeRush": -0.6,
+          "unreachedHeart": -0.7
+        },
+        "decision": {
+          "evidenceBased": 0.9,
+          "reflective": 0.5
+        },
+        "learning": {
+          "analytical": 1.8,
+          "solitary": 1.0,
+          "structured": 0.3
+        },
+        "riasec": {
+          "Investigative": 1.0
+        },
+        "work": {
+          "researcher": 0.8
+        },
+        "attitudinalPsyche": {
+          "L_confident": 0.6
+        },
+        "enneagram": {
+          "5": 1.0
+        },
+        "stress": {
+          "isolate": 0.7,
+          "intellectualize": 0.5
+        },
+        "defense": {
+          "intellectualization": 0.8,
+          "withdrawal": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_007_b",
+      "text": "Aku menjawab, “iya, aku juga lihat. Nanti aku cek lagi,” sebelum komentar itu mengambil seluruh hariku.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3,
+          "boundaryCutoff": 0.5
+        },
+        "stress": {
+          "freeze": 0.8,
+          "fawn": 0.3,
+          "collapse": 0.4
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "keptSelfRespect": 1,
+          "honestTenderness": 0.8
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "selfErasure": -0.8,
+          "floodedReaction": -0.5
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "emotionalExpression": 0.8
+        },
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "bigFive": {
+          "Neuroticism": 0.8
+        },
+        "hexaco": {
+          "Emotionality": 0.9
+        },
+        "attitudinalPsyche": {
+          "E_insecure": 0.5,
+          "E_flexible": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
+      "learning",
       "coreFear",
-      "stackRole",
       "evidence",
       "positive",
       "negative"
@@ -1027,147 +2041,315 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "stress",
       "defense",
+      "learning",
       "coreFear",
-      "stackRole",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_008",
-    "kind": "multiChoice",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "work",
+      "domain": "family",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Deadline maju dua jam. Chat masuk bersamaan, kopi tumpah di dekat laptop, dan tidak ada yang tahu versi file terakhir.",
-    "instruction": "Pilih maksimal 2 yang paling mungkin terjadi.",
+    "prompt": "Di rumah, pertengkaran lama meledak lagi. Pintu lemari terbuka, baju jatuh, dan semua orang bicara bersamaan.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_008_a",
-        "text": "Aku menghitung uang, waktu, dan orang yang bisa dihubungi sebelum membiarkan takut masuk.",
-        "subtleMeaning": "control",
+        "text": "Aku mencari benda yang bisa dibereskan dulu agar tanganku tidak ikut melempar kata.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
+          "riasec": {
+            "Realistic": 1.0
           },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
+          "work": {
+            "executor": 0.6,
+            "stabilizer": 0.4
           },
-          "coreFear": {
-            "losingControl": 1
+          "learning": {
+            "experiential": 0.7
           },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
+          "bigFive": {
+            "Conscientiousness": 0.3
+          },
+          "hexaco": {
+            "Conscientiousness": 0.3
           },
           "positive": {
-            "stabilizingMove": 1
+            "handsOnRepair": 1,
+            "keptRoomGentle": 0.8,
+            "keptSafe": 1
           },
           "negative": {
-            "rigidGrip": -0.8
+            "emptyTalk": -0.7,
+            "unspokenResentment": -0.7,
+            "ignoredBody": -0.9
           },
-          "reliability": 0.8
+          "evidence": {
+            "practicalRepair": 1,
+            "peaceSeeking": 1,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
+          },
+          "enneagram": {
+            "9": 1.2
+          },
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
+          },
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "control": 0.6
+          },
+          "defense": {
+            "withdrawal": 0.5
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_008_b",
-        "text": "Aku menyelesaikan tugas dulu, lalu baru membiarkan tangan gemetar setelah pintu tertutup.",
-        "subtleMeaning": "perform",
+        "text": "Aku berdiri di antara suara itu dan berkata, “satu orang dulu. Kalau tidak, aku keluar.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "perform": 2,
-            "collapse": -0.6
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
           },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
           },
-          "coreFear": {
-            "beingSeenFailing": 1
+          "values": {
+            "justice": 0.8,
+            "truth": 0.9,
+            "autonomy": 0.7
           },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
+          "conflict": {
+            "directConfrontation": 0.7,
+            "boundaryCutoff": 0.5
           },
           "positive": {
-            "staysFunctional": 1
+            "stoodForFairness": 1,
+            "tookResponsibility": 1,
+            "keptSelfRespect": 1
           },
           "negative": {
-            "hiddenBurnout": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_008_c",
-        "text": "Aku menegakkan badan dan berkata, “jangan bicara seperti itu ke aku.”",
-        "subtleMeaning": "fight",
-        "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
-          },
-          "defense": {
-            "control": 0.8
-          },
-          "coreFear": {
-            "beingControlled": 1
+            "easySilence": -0.8,
+            "waitingPermission": -0.7,
+            "selfErasure": -0.8
           },
           "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+            "justiceSeeking": 1,
+            "directEngagement": 0.4,
+            "actionFirst": 0.8,
+            "boundarySetting": 1,
+            "selfRespect": 0.8
           },
-          "positive": {
-            "protectiveFire": 1
+          "riasec": {
+            "Enterprising": 0.8
           },
-          "negative": {
-            "prematureAttack": -0.8
+          "disc": {
+            "D": 0.7,
+            "I": 0.3
           },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_008_d",
-        "text": "Aku diam beberapa detik, mendengar suara AC terlalu jelas, lalu menahan semua kalimat di tenggorokan.",
-        "subtleMeaning": "freeze",
-        "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
+          "work": {
+            "leader": 0.7,
+            "challenger": 0.4
           },
-          "defense": {
-            "emotionalSuppression": 1
+          "decision": {
+            "fastAction": 0.5
           },
-          "coreFear": {
-            "makingWrongMove": 1
+          "cognitive": {
+            "Fi": 2,
+            "Fe": -0.5
           },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+          "mbtiAxis": {
+            "F": 1,
+            "I": 0.5
           },
-          "positive": {
-            "pauseBeforeDamage": 1
+          "stackRole": {
+            "dominant": 0.5,
+            "opposing": 0.4
           },
-          "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_008_a",
+      "text": "Aku mencari benda yang bisa dibereskan dulu agar tanganku tidak ikut melempar kata.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "riasec": {
+          "Realistic": 1.0
+        },
+        "work": {
+          "executor": 0.6,
+          "stabilizer": 0.4
+        },
+        "learning": {
+          "experiential": 0.7
+        },
+        "bigFive": {
+          "Conscientiousness": 0.3
+        },
+        "hexaco": {
+          "Conscientiousness": 0.3
+        },
+        "positive": {
+          "handsOnRepair": 1,
+          "keptRoomGentle": 0.8,
+          "keptSafe": 1
+        },
+        "negative": {
+          "emptyTalk": -0.7,
+          "unspokenResentment": -0.7,
+          "ignoredBody": -0.9
+        },
+        "evidence": {
+          "practicalRepair": 1,
+          "peaceSeeking": 1,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_008_b",
+      "text": "Aku berdiri di antara suara itu dan berkata, “satu orang dulu. Kalau tidak, aku keluar.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.9,
+          "autonomy": 0.7
+        },
+        "conflict": {
+          "directConfrontation": 0.7,
+          "boundaryCutoff": 0.5
+        },
+        "positive": {
+          "stoodForFairness": 1,
+          "tookResponsibility": 1,
+          "keptSelfRespect": 1
+        },
+        "negative": {
+          "easySilence": -0.8,
+          "waitingPermission": -0.7,
+          "selfErasure": -0.8
+        },
+        "evidence": {
+          "justiceSeeking": 1,
+          "directEngagement": 0.4,
+          "actionFirst": 0.8,
+          "boundarySetting": 1,
+          "selfRespect": 0.8
+        },
+        "riasec": {
+          "Enterprising": 0.8
+        },
+        "disc": {
+          "D": 0.7,
+          "I": 0.3
+        },
+        "work": {
+          "leader": 0.7,
+          "challenger": 0.4
+        },
+        "decision": {
+          "fastAction": 0.5
+        },
+        "cognitive": {
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 0.5,
+          "opposing": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
@@ -1175,1082 +2357,1188 @@ export const STRESS_QUESTIONS: QuestionItem[] = [
     "coverageFocus": [
       "stress",
       "defense",
-      "coreFear",
-      "stackRole",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2",
-    "minSelect": 1,
-    "maxSelect": 2
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_009",
-    "kind": "hiddenReaction",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "family",
+      "domain": "romance",
       "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Keluarga berkata kau terlalu berlebihan. Di dapur, air keran mengalir terlalu lama karena kau lupa mematikannya.",
-    "instruction": "Pilih reaksi yang mungkin tidak terlihat dari luar.",
+    "prompt": "Orang yang kau sayang memilih diam tepat saat kau butuh kepastian. Jam dinding terdengar terlalu jelas.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
         "id": "stress_009_a",
-        "text": "Aku mematikan lampu, bukan karena ingin tidur, tapi karena semua terasa terlalu penuh.",
-        "subtleMeaning": "collapse",
+        "text": "Aku menunggu sebentar, lalu berkata, “diam boleh, tapi jangan membuatku menebak sendirian.”",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
+          "cognitive": {
+            "Fe": 1.5,
+            "Ti": -0.5,
+            "Fi": 2
           },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
+          "mbtiAxis": {
+            "F": 2,
+            "E": 0.5,
+            "J": 0.3,
+            "I": 0.5
           },
-          "coreFear": {
-            "notEnough": 1
+          "stackRole": {
+            "auxiliary": 0.7,
+            "dominant": 0.8,
+            "opposing": 0.4
           },
           "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "certaintySeeking": 1
           },
           "positive": {
-            "honestLimit": 1
+            "softRepair": 1,
+            "keptSelfRespect": 1,
+            "checkedRisk": 1
           },
           "negative": {
-            "vanishingUnderLoad": -0.7
+            "coldCut": -0.8,
+            "selfErasure": -0.8,
+            "blindLeap": -0.8
           },
-          "reliability": 0.76
+          "relationship": {
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5,
+            "reassuranceSeeking": 0.6
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "values": {
+            "autonomy": 0.7,
+            "truth": 0.5
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "enneagram": {
+            "6": 1.1
+          },
+          "coreFear": {
+            "unsafe": 0.8
+          },
+          "coreDesire": {
+            "certainty": 0.7
+          },
+          "decision": {
+            "riskAware": 0.7,
+            "consultative": 0.4
+          },
+          "reliability": 0.84
         }
       },
       {
         "id": "stress_009_b",
-        "text": "Aku menenangkan orang lain dulu supaya ruangan tidak pecah, walau dadaku sendiri berantakan.",
-        "subtleMeaning": "fawn",
+        "text": "Aku memilih tidur dulu, karena kalau diteruskan malam ini aku akan bicara dari luka, bukan dari diriku.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "defense": {
-            "peoplePleasing": 1
-          },
-          "coreFear": {
-            "beingRejected": 1
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
           },
           "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "peaceSeeking": 1,
+            "analysisLoop": 1
           },
           "positive": {
-            "deescalationCare": 1
+            "keptSafe": 1,
+            "keptRoomGentle": 0.8,
+            "protectedEnergy": 1
           },
           "negative": {
-            "selfAbandonment": -0.8
+            "ignoredBody": -0.9,
+            "unspokenResentment": -0.7,
+            "unreachedHeart": -0.7
           },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_009_c",
-        "text": "Aku memotong kalimatnya sebelum semua orang ikut percaya pada versinya.",
-        "subtleMeaning": "fight",
-        "weights": {
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
           "stress": {
-            "fight": 2,
-            "freeze": -0.5
+            "control": 0.6,
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "isolate": 0.7,
+            "intellectualize": 0.5
           },
-          "defense": {
-            "control": 0.8
+          "enneagram": {
+            "9": 1.2,
+            "5": 1.0
           },
           "coreFear": {
-            "beingControlled": 1
+            "conflict": 0.7
           },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
+          "coreDesire": {
+            "peace": 0.7
           },
-          "positive": {
-            "protectiveFire": 1
-          },
-          "negative": {
-            "prematureAttack": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_009_d",
-        "text": "Aku mencari alasan yang masuk akal dulu, karena kalau tidak, dadaku akan mengambil alih.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
           },
           "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
+            "withdrawal": 1.0,
+            "intellectualization": 0.8
           },
-          "coreFear": {
-            "beingOverwhelmed": 1
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
           },
-          "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
-          },
-          "positive": {
-            "clearDistance": 1
-          },
-          "negative": {
-            "feelingDelay": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_009_a",
+      "text": "Aku menunggu sebentar, lalu berkata, “diam boleh, tapi jangan membuatku menebak sendirian.”",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fe": 1.5,
+          "Ti": -0.5,
+          "Fi": 2
+        },
+        "mbtiAxis": {
+          "F": 2,
+          "E": 0.5,
+          "J": 0.3,
+          "I": 0.5
+        },
+        "stackRole": {
+          "auxiliary": 0.7,
+          "dominant": 0.8,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "certaintySeeking": 1
+        },
+        "positive": {
+          "softRepair": 1,
+          "keptSelfRespect": 1,
+          "checkedRisk": 1
+        },
+        "negative": {
+          "coldCut": -0.8,
+          "selfErasure": -0.8,
+          "blindLeap": -0.8
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5,
+          "reassuranceSeeking": 0.6
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 0.5
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "enneagram": {
+          "6": 1.1
+        },
+        "coreFear": {
+          "unsafe": 0.8
+        },
+        "coreDesire": {
+          "certainty": 0.7
+        },
+        "decision": {
+          "riskAware": 0.7,
+          "consultative": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_009_b",
+      "text": "Aku memilih tidur dulu, karena kalau diteruskan malam ini aku akan bicara dari luka, bukan dari diriku.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "evidence": {
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "peaceSeeking": 1,
+          "analysisLoop": 1
+        },
+        "positive": {
+          "keptSafe": 1,
+          "keptRoomGentle": 0.8,
+          "protectedEnergy": 1
+        },
+        "negative": {
+          "ignoredBody": -0.9,
+          "unspokenResentment": -0.7,
+          "unreachedHeart": -0.7
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "stress": {
+          "control": 0.6,
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "isolate": 0.7,
+          "intellectualize": 0.5
+        },
+        "enneagram": {
+          "9": 1.2,
+          "5": 1.0
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "defense": {
+          "withdrawal": 1.0,
+          "intellectualization": 0.8
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
+      "relationship",
+      "communication",
       "defense",
-      "coreFear",
-      "stackRole",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "stress",
+      "relationship",
+      "communication",
       "defense",
-      "coreFear",
-      "stackRole",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
     "id": "stress_010",
-    "kind": "ranking",
-    "context": {
-      "domain": "stress",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Malam itu semua terasa salah: pesan buruk, tubuh lelah, tugas belum selesai, dan seseorang tetap meminta kau menjawab sekarang.",
-    "instruction": "Urutkan dari yang paling mungkin terjadi sampai yang paling jauh.",
-    "options": [
-      {
-        "id": "stress_010_a",
-        "text": "Aku membuka catatan, membuat daftar cepat, dan memegang satu bagian yang masih bisa diatur.",
-        "subtleMeaning": "control",
-        "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
-          },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
-          },
-          "coreFear": {
-            "losingControl": 1
-          },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
-          },
-          "positive": {
-            "stabilizingMove": 1
-          },
-          "negative": {
-            "rigidGrip": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_010_b",
-        "text": "Aku mengambil tas dan memilih jarak dulu daripada meledak di depan orang.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
-          },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
-          },
-          "positive": {
-            "exitAwareness": 1
-          },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_010_c",
-        "text": "Aku menatap satu titik di meja sambil mencoba menebak langkah yang paling tidak merusak.",
-        "subtleMeaning": "freeze",
-        "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
-          },
-          "defense": {
-            "emotionalSuppression": 1
-          },
-          "coreFear": {
-            "makingWrongMove": 1
-          },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
-          },
-          "positive": {
-            "pauseBeforeDamage": 1
-          },
-          "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_010_d",
-        "text": "Aku merapikan suara dan tetap menjawab seperti orang yang baik-baik saja.",
-        "subtleMeaning": "perform",
-        "weights": {
-          "stress": {
-            "perform": 2,
-            "collapse": -0.6
-          },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
-          },
-          "coreFear": {
-            "beingSeenFailing": 1
-          },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
-          },
-          "positive": {
-            "staysFunctional": 1
-          },
-          "negative": {
-            "hiddenBurnout": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_010_e",
-        "text": "Aku duduk di tepi kasur dan mendadak tidak bisa memilih apa pun, bahkan membalas pesan sederhana.",
-        "subtleMeaning": "collapse",
-        "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
-          },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
-          },
-          "coreFear": {
-            "notEnough": 1
-          },
-          "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
-          },
-          "positive": {
-            "honestLimit": 1
-          },
-          "negative": {
-            "vanishingUnderLoad": -0.7
-          },
-          "reliability": 0.76
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2",
-    "rankLimit": 5
-  },
-  {
-    "id": "stress_011",
-    "kind": "singleChoice",
-    "context": {
-      "domain": "money",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Dompetmu hampir kosong, tapi ada orang yang meminjam uang dengan suara yang membuatmu merasa bersalah.",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
-    "options": [
-      {
-        "id": "stress_011_a",
-        "text": "Aku tersenyum kecil dan bilang, “nggak apa-apa,” meski tanganku sudah dingin.",
-        "subtleMeaning": "fawn",
-        "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
-          },
-          "defense": {
-            "peoplePleasing": 1
-          },
-          "coreFear": {
-            "beingRejected": 1
-          },
-          "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "deescalationCare": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_011_b",
-        "text": "Aku menghitung uang, waktu, dan orang yang bisa dihubungi sebelum membiarkan takut masuk.",
-        "subtleMeaning": "control",
-        "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
-          },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
-          },
-          "coreFear": {
-            "losingControl": 1
-          },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
-          },
-          "positive": {
-            "stabilizingMove": 1
-          },
-          "negative": {
-            "rigidGrip": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_011_c",
-        "text": "Aku memisahkan kejadian itu menjadi beberapa bagian kecil agar tidak tenggelam di perasaan sendiri.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
-          },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
-          },
-          "coreFear": {
-            "beingOverwhelmed": 1
-          },
-          "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
-          },
-          "positive": {
-            "clearDistance": 1
-          },
-          "negative": {
-            "feelingDelay": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_011_d",
-        "text": "Aku mencari alasan untuk keluar dari ruangan sebelum wajahku bicara lebih banyak daripada mulutku.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
-          },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
-          },
-          "positive": {
-            "exitAwareness": 1
-          },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "stress_012",
-    "kind": "singleChoice",
-    "context": {
-      "domain": "identity",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Kau salah bicara. Ruangan hening sebentar, lalu seseorang berkata, “ya ampun, kok bisa?”",
-    "instruction": "Pilih respons yang terasa paling mungkin bagimu.",
-    "options": [
-      {
-        "id": "stress_012_a",
-        "text": "Aku mematikan lampu, bukan karena ingin tidur, tapi karena semua terasa terlalu penuh.",
-        "subtleMeaning": "collapse",
-        "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
-          },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
-          },
-          "coreFear": {
-            "notEnough": 1
-          },
-          "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
-          },
-          "positive": {
-            "honestLimit": 1
-          },
-          "negative": {
-            "vanishingUnderLoad": -0.7
-          },
-          "reliability": 0.76
-        }
-      },
-      {
-        "id": "stress_012_b",
-        "text": "Aku menyelesaikan tugas dulu, lalu baru membiarkan tangan gemetar setelah pintu tertutup.",
-        "subtleMeaning": "perform",
-        "weights": {
-          "stress": {
-            "perform": 2,
-            "collapse": -0.6
-          },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
-          },
-          "coreFear": {
-            "beingSeenFailing": 1
-          },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
-          },
-          "positive": {
-            "staysFunctional": 1
-          },
-          "negative": {
-            "hiddenBurnout": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_012_c",
-        "text": "Aku menegakkan badan dan berkata, “jangan bicara seperti itu ke aku.”",
-        "subtleMeaning": "fight",
-        "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
-          },
-          "defense": {
-            "control": 0.8
-          },
-          "coreFear": {
-            "beingControlled": 1
-          },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
-          },
-          "positive": {
-            "protectiveFire": 1
-          },
-          "negative": {
-            "prematureAttack": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_012_d",
-        "text": "Aku menenangkan orang lain dulu supaya ruangan tidak pecah, walau dadaku sendiri berantakan.",
-        "subtleMeaning": "fawn",
-        "weights": {
-          "stress": {
-            "fawn": 2,
-            "fight": -0.6
-          },
-          "defense": {
-            "peoplePleasing": 1
-          },
-          "coreFear": {
-            "beingRejected": 1
-          },
-          "evidence": {
-            "appeasement": 1,
-            "peopleFirst": 0.7
-          },
-          "positive": {
-            "deescalationCare": 1
-          },
-          "negative": {
-            "selfAbandonment": -0.8
-          },
-          "reliability": 0.78
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "stress_013",
-    "kind": "firstReaction",
-    "context": {
-      "domain": "daily",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
-    },
-    "prompt": "Di jalan, seseorang menyerempetmu lalu malah marah. Orang-orang mulai melihat.",
-    "instruction": "Pilih reaksi pertama sebelum kau sempat merapikan wajah.",
-    "options": [
-      {
-        "id": "stress_013_a",
-        "text": "Aku memotong kalimatnya sebelum semua orang ikut percaya pada versinya.",
-        "subtleMeaning": "fight",
-        "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
-          },
-          "defense": {
-            "control": 0.8
-          },
-          "coreFear": {
-            "beingControlled": 1
-          },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
-          },
-          "positive": {
-            "protectiveFire": 1
-          },
-          "negative": {
-            "prematureAttack": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_013_b",
-        "text": "Aku mengambil tas dan memilih jarak dulu daripada meledak di depan orang.",
-        "subtleMeaning": "flight",
-        "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
-          },
-          "coreFear": {
-            "beingTrapped": 1
-          },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
-          },
-          "positive": {
-            "exitAwareness": 1
-          },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_013_c",
-        "text": "Aku diam beberapa detik, mendengar suara AC terlalu jelas, lalu menahan semua kalimat di tenggorokan.",
-        "subtleMeaning": "freeze",
-        "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
-          },
-          "defense": {
-            "emotionalSuppression": 1
-          },
-          "coreFear": {
-            "makingWrongMove": 1
-          },
-          "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
-          },
-          "positive": {
-            "pauseBeforeDamage": 1
-          },
-          "negative": {
-            "delayedAction": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_013_d",
-        "text": "Aku membuka catatan, membuat daftar cepat, dan memegang satu bagian yang masih bisa diatur.",
-        "subtleMeaning": "control",
-        "weights": {
-          "stress": {
-            "control": 2,
-            "collapse": -0.5
-          },
-          "defense": {
-            "perfectionism": 0.8,
-            "control": 1
-          },
-          "coreFear": {
-            "losingControl": 1
-          },
-          "evidence": {
-            "practicalRepair": 0.8,
-            "orderSeeking": 1
-          },
-          "positive": {
-            "stabilizingMove": 1
-          },
-          "negative": {
-            "rigidGrip": -0.8
-          },
-          "reliability": 0.8
-        }
-      }
-    ],
-    "reliability": 0.8,
-    "targetSystems": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "coverageFocus": [
-      "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
-      "evidence",
-      "positive",
-      "negative"
-    ],
-    "batchTag": "tahap-2"
-  },
-  {
-    "id": "stress_014",
-    "kind": "hiddenReaction",
+    "kind": "forcedChoice",
     "context": {
       "domain": "work",
       "pressureLevel": "high",
       "socialExposure": "semiPrivate",
-      "emotionalCharge": "high"
+      "emotionalCharge": "medium"
     },
-    "prompt": "Atasan/dosen membandingkanmu dengan orang lain. Kau mengangguk, tapi kuku jarimu menekan telapak tangan.",
-    "instruction": "Pilih reaksi yang mungkin tidak terlihat dari luar.",
+    "prompt": "Atasan mengubah keputusan terakhir menit terakhir. Semua catatan yang kau susun tampak tidak berguna.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
-        "id": "stress_014_a",
-        "text": "Aku merapikan suara dan tetap menjawab seperti orang yang baik-baik saja.",
-        "subtleMeaning": "perform",
+        "id": "stress_010_a",
+        "text": "Aku menyimpan versi lama, menandai perubahan, lalu mulai dari bagian yang masih bisa diselamatkan.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "perform": 2,
-            "collapse": -0.6
+          "riasec": {
+            "Conventional": 0.9
           },
-          "defense": {
-            "perfectionism": 0.7,
-            "emotionalSuppression": 0.7
+          "disc": {
+            "C": 1.1,
+            "D": 0.4
           },
-          "coreFear": {
-            "beingSeenFailing": 1
+          "work": {
+            "refiner": 0.8,
+            "planner": 1.2,
+            "executor": 0.6
           },
-          "evidence": {
-            "visibleRole": 1,
-            "shameResponse": 0.6
+          "learning": {
+            "structured": 0.6,
+            "repetitionBased": 0.4
           },
           "positive": {
-            "staysFunctional": 1
+            "madeItNeat": 1,
+            "keptGround": 1,
+            "clearNextStep": 1
           },
           "negative": {
-            "hiddenBurnout": -0.8
+            "messyLeap": -0.7,
+            "chaoticDrift": -0.7,
+            "looseProcess": -0.8
           },
-          "reliability": 0.78
+          "evidence": {
+            "orderSeeking": 1.8,
+            "practicalRepair": 1,
+            "systemFirst": 0.8
+          },
+          "bigFive": {
+            "Conscientiousness": 0.6
+          },
+          "hexaco": {
+            "Conscientiousness": 0.6
+          },
+          "values": {
+            "security": 0.7
+          },
+          "environment": {
+            "organizedSpace": 0.6,
+            "familiarPlace": 0.4
+          },
+          "cognitive": {
+            "Te": 2,
+            "Fi": -0.5
+          },
+          "mbtiAxis": {
+            "T": 0.8,
+            "J": 1
+          },
+          "stackRole": {
+            "auxiliary": 0.6,
+            "dominant": 0.5
+          },
+          "reliability": 0.84
         }
       },
       {
-        "id": "stress_014_b",
-        "text": "Aku duduk di tepi kasur dan mendadak tidak bisa memilih apa pun, bahkan membalas pesan sederhana.",
-        "subtleMeaning": "collapse",
+        "id": "stress_010_b",
+        "text": "Aku bertanya, “prioritas barunya apa?” supaya tidak membuang tenaga ke arah yang salah.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "collapse": 2,
-            "perform": -0.5
+          "cognitive": {
+            "Ti": 2,
+            "Fe": -0.5,
+            "Te": 2,
+            "Fi": -0.5
           },
-          "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
+          "mbtiAxis": {
+            "T": 1.8,
+            "I": 0.5,
+            "J": 1
           },
-          "coreFear": {
-            "notEnough": 1
+          "stackRole": {
+            "dominant": 1.1,
+            "critical": 0.3,
+            "auxiliary": 0.6
           },
           "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+            "internalCheck": 1,
+            "truthSeeking": 0.8,
+            "practicalRepair": 1,
+            "systemFirst": 0.8,
+            "directEngagement": 0.4
           },
           "positive": {
-            "honestLimit": 1
+            "cleanReason": 1,
+            "clearNextStep": 1,
+            "clearWords": 0.6
           },
           "negative": {
-            "vanishingUnderLoad": -0.7
+            "socialGuessing": -0.7,
+            "looseProcess": -0.8,
+            "muddyMessage": -0.5
           },
-          "reliability": 0.76
-        }
-      },
-      {
-        "id": "stress_014_c",
-        "text": "Aku mencari alasan yang masuk akal dulu, karena kalau tidak, dadaku akan mengambil alih.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
+          "decision": {
+            "evidenceBased": 0.9,
+            "reflective": 0.5
           },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
+          "learning": {
+            "analytical": 0.7,
+            "solitary": 0.4
           },
-          "coreFear": {
-            "beingOverwhelmed": 1
+          "work": {
+            "planner": 0.8,
+            "executor": 0.6
           },
-          "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
+          "disc": {
+            "C": 0.4,
+            "D": 0.4
           },
-          "positive": {
-            "clearDistance": 1
+          "communication": {
+            "direct": 0.5,
+            "gentle": 0.3
           },
-          "negative": {
-            "feelingDelay": -0.8
-          },
-          "reliability": 0.8
-        }
-      },
-      {
-        "id": "stress_014_d",
-        "text": "Aku menegakkan badan dan berkata, “jangan bicara seperti itu ke aku.”",
-        "subtleMeaning": "fight",
-        "weights": {
-          "stress": {
-            "fight": 2,
-            "freeze": -0.5
-          },
-          "defense": {
-            "control": 0.8
-          },
-          "coreFear": {
-            "beingControlled": 1
-          },
-          "evidence": {
-            "confrontation": 1,
-            "angerResponse": 0.8
-          },
-          "positive": {
-            "protectiveFire": 1
-          },
-          "negative": {
-            "prematureAttack": -0.8
-          },
-          "reliability": 0.8
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_010_a",
+      "text": "Aku menyimpan versi lama, menandai perubahan, lalu mulai dari bagian yang masih bisa diselamatkan.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "riasec": {
+          "Conventional": 0.9
+        },
+        "disc": {
+          "C": 1.1,
+          "D": 0.4
+        },
+        "work": {
+          "refiner": 0.8,
+          "planner": 1.2,
+          "executor": 0.6
+        },
+        "learning": {
+          "structured": 0.6,
+          "repetitionBased": 0.4
+        },
+        "positive": {
+          "madeItNeat": 1,
+          "keptGround": 1,
+          "clearNextStep": 1
+        },
+        "negative": {
+          "messyLeap": -0.7,
+          "chaoticDrift": -0.7,
+          "looseProcess": -0.8
+        },
+        "evidence": {
+          "orderSeeking": 1.8,
+          "practicalRepair": 1,
+          "systemFirst": 0.8
+        },
+        "bigFive": {
+          "Conscientiousness": 0.6
+        },
+        "hexaco": {
+          "Conscientiousness": 0.6
+        },
+        "values": {
+          "security": 0.7
+        },
+        "environment": {
+          "organizedSpace": 0.6,
+          "familiarPlace": 0.4
+        },
+        "cognitive": {
+          "Te": 2,
+          "Fi": -0.5
+        },
+        "mbtiAxis": {
+          "T": 0.8,
+          "J": 1
+        },
+        "stackRole": {
+          "auxiliary": 0.6,
+          "dominant": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_010_b",
+      "text": "Aku bertanya, “prioritas barunya apa?” supaya tidak membuang tenaga ke arah yang salah.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Ti": 2,
+          "Fe": -0.5,
+          "Te": 2,
+          "Fi": -0.5
+        },
+        "mbtiAxis": {
+          "T": 1.8,
+          "I": 0.5,
+          "J": 1
+        },
+        "stackRole": {
+          "dominant": 1.1,
+          "critical": 0.3,
+          "auxiliary": 0.6
+        },
+        "evidence": {
+          "internalCheck": 1,
+          "truthSeeking": 0.8,
+          "practicalRepair": 1,
+          "systemFirst": 0.8,
+          "directEngagement": 0.4
+        },
+        "positive": {
+          "cleanReason": 1,
+          "clearNextStep": 1,
+          "clearWords": 0.6
+        },
+        "negative": {
+          "socialGuessing": -0.7,
+          "looseProcess": -0.8,
+          "muddyMessage": -0.5
+        },
+        "decision": {
+          "evidenceBased": 0.9,
+          "reflective": 0.5
+        },
+        "learning": {
+          "analytical": 0.7,
+          "solitary": 0.4
+        },
+        "work": {
+          "planner": 0.8,
+          "executor": 0.6
+        },
+        "disc": {
+          "C": 0.4,
+          "D": 0.4
+        },
+        "communication": {
+          "direct": 0.5,
+          "gentle": 0.3
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "work",
+      "decision",
+      "learning",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "work",
+      "decision",
+      "learning",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2"
+    "batchTag": "forced-choice-rewrite"
   },
   {
-    "id": "stress_015",
-    "kind": "multiChoice",
+    "id": "stress_011",
+    "kind": "forcedChoice",
     "context": {
-      "domain": "romance",
-      "pressureLevel": "high",
-      "socialExposure": "semiPrivate",
+      "domain": "friendship",
+      "pressureLevel": "medium",
+      "socialExposure": "private",
       "emotionalCharge": "high"
     },
-    "prompt": "Orang yang kau tunggu mengunggah sesuatu, tapi tetap tidak membalas pesanmu. Kamar terasa tiba-tiba lebih sempit.",
-    "instruction": "Pilih maksimal 2 yang paling mungkin terjadi.",
+    "prompt": "Temanmu lupa janji penting. Ketika diingatkan, ia berkata, “aku banyak pikiran.”",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
     "options": [
       {
-        "id": "stress_015_a",
-        "text": "Aku menatap satu titik di meja sambil mencoba menebak langkah yang paling tidak merusak.",
-        "subtleMeaning": "freeze",
+        "id": "stress_011_a",
+        "text": "Aku bilang, “aku paham, tapi aku tetap kecewa,” tanpa membuatnya menebak lukaku.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "freeze": 2,
-            "actionFirst": -0.4
+          "cognitive": {
+            "Fi": 2,
+            "Fe": 1.5,
+            "Ti": -0.5
           },
-          "defense": {
-            "emotionalSuppression": 1
+          "mbtiAxis": {
+            "F": 2,
+            "I": 0.5,
+            "E": 0.5,
+            "J": 0.3
           },
-          "coreFear": {
-            "makingWrongMove": 1
+          "stackRole": {
+            "dominant": 0.8,
+            "opposing": 0.4,
+            "auxiliary": 0.7
           },
           "evidence": {
-            "observeFirst": 1,
-            "fearResponse": 0.8
+            "boundarySetting": 1,
+            "selfRespect": 0.8,
+            "peopleFirst": 1,
+            "repairSeeking": 0.8,
+            "truthSeeking": 1
           },
           "positive": {
-            "pauseBeforeDamage": 1
+            "keptSelfRespect": 1,
+            "softRepair": 1,
+            "cleanHands": 1
           },
           "negative": {
-            "delayedAction": -0.8
+            "selfErasure": -0.8,
+            "coldCut": -0.8,
+            "smoothLie": -0.8
           },
-          "reliability": 0.8
+          "values": {
+            "autonomy": 0.7,
+            "truth": 1.3
+          },
+          "conflict": {
+            "boundaryCutoff": 0.5
+          },
+          "relationship": {
+            "repairSeeking": 0.8,
+            "secureLeaning": 0.5
+          },
+          "communication": {
+            "gentle": 0.7,
+            "expressive": 0.3
+          },
+          "hexaco": {
+            "HonestyHumility": 1.0
+          },
+          "moral": {
+            "truthBased": 0.8,
+            "purityIntegrityBased": 0.4
+          },
+          "reliability": 0.84
         }
       },
       {
-        "id": "stress_015_b",
-        "text": "Aku mencari alasan untuk keluar dari ruangan sebelum wajahku bicara lebih banyak daripada mulutku.",
-        "subtleMeaning": "flight",
+        "id": "stress_011_b",
+        "text": "Aku menunda membahasnya sampai aku tidak ingin menghukum dia lewat nada suaraku.",
+        "subtleMeaning": "hidden",
         "weights": {
-          "stress": {
-            "flight": 2,
-            "fight": -0.4
-          },
-          "defense": {
-            "avoidance": 1
+          "enneagram": {
+            "9": 1.2,
+            "5": 1.0
           },
           "coreFear": {
-            "beingTrapped": 1
+            "conflict": 0.7
           },
-          "evidence": {
-            "riskAvoidance": 0.7,
-            "withdrawal": 0.8
+          "coreDesire": {
+            "peace": 0.7
           },
-          "positive": {
-            "exitAwareness": 1
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3
           },
-          "negative": {
-            "unfinishedRepair": -0.8
-          },
-          "reliability": 0.78
-        }
-      },
-      {
-        "id": "stress_015_c",
-        "text": "Aku mematikan lampu, bukan karena ingin tidur, tapi karena semua terasa terlalu penuh.",
-        "subtleMeaning": "collapse",
-        "weights": {
           "stress": {
-            "collapse": 2,
-            "perform": -0.5
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "isolate": 0.7,
+            "intellectualize": 0.5,
+            "control": 0.6
           },
           "defense": {
-            "numb": 1,
-            "selfBlame": 0.7
-          },
-          "coreFear": {
-            "notEnough": 1
-          },
-          "evidence": {
-            "shameResponse": 1,
-            "withdrawal": 0.7
+            "withdrawal": 1.0,
+            "intellectualization": 0.8
           },
           "positive": {
-            "honestLimit": 1
+            "keptRoomGentle": 0.8,
+            "protectedEnergy": 1,
+            "keptSafe": 1
           },
           "negative": {
-            "vanishingUnderLoad": -0.7
-          },
-          "reliability": 0.76
-        }
-      },
-      {
-        "id": "stress_015_d",
-        "text": "Aku memisahkan kejadian itu menjadi beberapa bagian kecil agar tidak tenggelam di perasaan sendiri.",
-        "subtleMeaning": "intellectualize",
-        "weights": {
-          "stress": {
-            "intellectualize": 2,
-            "emotionalExpression": -0.5
-          },
-          "defense": {
-            "intellectualization": 1,
-            "rationalization": 0.7
-          },
-          "coreFear": {
-            "beingOverwhelmed": 1
+            "unspokenResentment": -0.7,
+            "unreachedHeart": -0.7,
+            "ignoredBody": -0.9
           },
           "evidence": {
-            "internalChecking": 1,
-            "analysisLoop": 0.8
+            "peaceSeeking": 1,
+            "analysisLoop": 1,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8
           },
-          "positive": {
-            "clearDistance": 1
+          "learning": {
+            "solitary": 0.6,
+            "analytical": 0.5
           },
-          "negative": {
-            "feelingDelay": -0.8
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
           },
-          "reliability": 0.8
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "reliability": 0.84
         }
       }
     ],
-    "reliability": 0.8,
+    "left": {
+      "id": "stress_011_a",
+      "text": "Aku bilang, “aku paham, tapi aku tetap kecewa,” tanpa membuatnya menebak lukaku.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Fi": 2,
+          "Fe": 1.5,
+          "Ti": -0.5
+        },
+        "mbtiAxis": {
+          "F": 2,
+          "I": 0.5,
+          "E": 0.5,
+          "J": 0.3
+        },
+        "stackRole": {
+          "dominant": 0.8,
+          "opposing": 0.4,
+          "auxiliary": 0.7
+        },
+        "evidence": {
+          "boundarySetting": 1,
+          "selfRespect": 0.8,
+          "peopleFirst": 1,
+          "repairSeeking": 0.8,
+          "truthSeeking": 1
+        },
+        "positive": {
+          "keptSelfRespect": 1,
+          "softRepair": 1,
+          "cleanHands": 1
+        },
+        "negative": {
+          "selfErasure": -0.8,
+          "coldCut": -0.8,
+          "smoothLie": -0.8
+        },
+        "values": {
+          "autonomy": 0.7,
+          "truth": 1.3
+        },
+        "conflict": {
+          "boundaryCutoff": 0.5
+        },
+        "relationship": {
+          "repairSeeking": 0.8,
+          "secureLeaning": 0.5
+        },
+        "communication": {
+          "gentle": 0.7,
+          "expressive": 0.3
+        },
+        "hexaco": {
+          "HonestyHumility": 1.0
+        },
+        "moral": {
+          "truthBased": 0.8,
+          "purityIntegrityBased": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_011_b",
+      "text": "Aku menunda membahasnya sampai aku tidak ingin menghukum dia lewat nada suaraku.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2,
+          "5": 1.0
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "isolate": 0.7,
+          "intellectualize": 0.5,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 1.0,
+          "intellectualization": 0.8
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "protectedEnergy": 1,
+          "keptSafe": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "unreachedHeart": -0.7,
+          "ignoredBody": -0.9
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "analysisLoop": 1,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8
+        },
+        "learning": {
+          "solitary": 0.6,
+          "analytical": 0.5
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
     "targetSystems": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
     "coverageFocus": [
       "stress",
-      "defense",
-      "coreFear",
-      "stackRole",
+      "relationship",
+      "conflict",
+      "communication",
       "evidence",
       "positive",
       "negative"
     ],
-    "batchTag": "tahap-2",
-    "minSelect": 1,
-    "maxSelect": 2
+    "batchTag": "forced-choice-rewrite"
+  },
+  {
+    "id": "stress_012",
+    "kind": "forcedChoice",
+    "context": {
+      "domain": "daily",
+      "pressureLevel": "medium",
+      "socialExposure": "public",
+      "emotionalCharge": "medium"
+    },
+    "prompt": "Di jalan, seseorang menabrak bahumu lalu pergi tanpa menoleh. Tubuhmu panas sebelum pikiranmu selesai.",
+    "instruction": "Pilih sisi yang terasa lebih dekat. Kau juga boleh memilih “dua-duanya”, “tidak dua-duanya”, atau “tergantung”.",
+    "options": [
+      {
+        "id": "stress_012_a",
+        "text": "Aku menahan langkah, menghembuskan napas, dan memilih tidak mengejar sesuatu yang akan membuat hari rusak.",
+        "subtleMeaning": "hidden",
+        "weights": {
+          "enneagram": {
+            "9": 1.2
+          },
+          "coreFear": {
+            "conflict": 0.7
+          },
+          "coreDesire": {
+            "peace": 0.7
+          },
+          "conflict": {
+            "quietWithdrawal": 0.7,
+            "appeasement": 0.3,
+            "negotiation": 0.5
+          },
+          "stress": {
+            "freeze": 0.5,
+            "fawn": 0.3,
+            "control": 0.6
+          },
+          "defense": {
+            "withdrawal": 0.5
+          },
+          "positive": {
+            "keptRoomGentle": 0.8,
+            "keptSafe": 1,
+            "softenedEdge": 1
+          },
+          "negative": {
+            "unspokenResentment": -0.7,
+            "ignoredBody": -0.9,
+            "needlessSharpness": -0.8
+          },
+          "evidence": {
+            "peaceSeeking": 1,
+            "bodyAwareness": 1,
+            "riskAvoidance": 0.8,
+            "repairSeeking": 0.7
+          },
+          "instinct": {
+            "sp": 1.5,
+            "sx": -0.3
+          },
+          "attitudinalPsyche": {
+            "F_confident": 0.7,
+            "V_flexible": 0.3
+          },
+          "environment": {
+            "privateSpace": 0.6,
+            "functionalSpace": 0.4
+          },
+          "bigFive": {
+            "Agreeableness": 0.8
+          },
+          "hexaco": {
+            "Agreeableness": 0.8
+          },
+          "communication": {
+            "gentle": 0.6
+          },
+          "reliability": 0.84
+        }
+      },
+      {
+        "id": "stress_012_b",
+        "text": "Aku memanggilnya sekali, cukup keras, “mas, tadi nabrak,” lalu berhenti di situ.",
+        "subtleMeaning": "hidden",
+        "weights": {
+          "cognitive": {
+            "Se": 2,
+            "Ni": -0.6,
+            "Fi": 2,
+            "Fe": -0.5
+          },
+          "mbtiAxis": {
+            "E": 0.6,
+            "S": 1,
+            "P": 0.5,
+            "F": 1,
+            "I": 0.5
+          },
+          "stackRole": {
+            "dominant": 1.0,
+            "inferior": 0.3,
+            "opposing": 0.4
+          },
+          "evidence": {
+            "actionFirst": 1,
+            "directEngagement": 1.3,
+            "justiceSeeking": 1,
+            "boundarySetting": 1,
+            "selfRespect": 0.8
+          },
+          "positive": {
+            "presentMove": 1,
+            "stoodForFairness": 1,
+            "keptSelfRespect": 1
+          },
+          "negative": {
+            "overWaiting": -0.8,
+            "easySilence": -0.8,
+            "selfErasure": -0.8
+          },
+          "stress": {
+            "fight": 0.5
+          },
+          "disc": {
+            "D": 0.5
+          },
+          "enneagram": {
+            "1": 0.8,
+            "8": 0.4
+          },
+          "moral": {
+            "justiceBased": 1,
+            "truthBased": 0.5
+          },
+          "values": {
+            "justice": 0.8,
+            "truth": 0.9,
+            "autonomy": 0.7
+          },
+          "conflict": {
+            "directConfrontation": 0.7,
+            "boundaryCutoff": 0.5
+          },
+          "reliability": 0.84
+        }
+      }
+    ],
+    "left": {
+      "id": "stress_012_a",
+      "text": "Aku menahan langkah, menghembuskan napas, dan memilih tidak mengejar sesuatu yang akan membuat hari rusak.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "enneagram": {
+          "9": 1.2
+        },
+        "coreFear": {
+          "conflict": 0.7
+        },
+        "coreDesire": {
+          "peace": 0.7
+        },
+        "conflict": {
+          "quietWithdrawal": 0.7,
+          "appeasement": 0.3,
+          "negotiation": 0.5
+        },
+        "stress": {
+          "freeze": 0.5,
+          "fawn": 0.3,
+          "control": 0.6
+        },
+        "defense": {
+          "withdrawal": 0.5
+        },
+        "positive": {
+          "keptRoomGentle": 0.8,
+          "keptSafe": 1,
+          "softenedEdge": 1
+        },
+        "negative": {
+          "unspokenResentment": -0.7,
+          "ignoredBody": -0.9,
+          "needlessSharpness": -0.8
+        },
+        "evidence": {
+          "peaceSeeking": 1,
+          "bodyAwareness": 1,
+          "riskAvoidance": 0.8,
+          "repairSeeking": 0.7
+        },
+        "instinct": {
+          "sp": 1.5,
+          "sx": -0.3
+        },
+        "attitudinalPsyche": {
+          "F_confident": 0.7,
+          "V_flexible": 0.3
+        },
+        "environment": {
+          "privateSpace": 0.6,
+          "functionalSpace": 0.4
+        },
+        "bigFive": {
+          "Agreeableness": 0.8
+        },
+        "hexaco": {
+          "Agreeableness": 0.8
+        },
+        "communication": {
+          "gentle": 0.6
+        },
+        "reliability": 0.84
+      }
+    },
+    "right": {
+      "id": "stress_012_b",
+      "text": "Aku memanggilnya sekali, cukup keras, “mas, tadi nabrak,” lalu berhenti di situ.",
+      "subtleMeaning": "hidden",
+      "weights": {
+        "cognitive": {
+          "Se": 2,
+          "Ni": -0.6,
+          "Fi": 2,
+          "Fe": -0.5
+        },
+        "mbtiAxis": {
+          "E": 0.6,
+          "S": 1,
+          "P": 0.5,
+          "F": 1,
+          "I": 0.5
+        },
+        "stackRole": {
+          "dominant": 1.0,
+          "inferior": 0.3,
+          "opposing": 0.4
+        },
+        "evidence": {
+          "actionFirst": 1,
+          "directEngagement": 1.3,
+          "justiceSeeking": 1,
+          "boundarySetting": 1,
+          "selfRespect": 0.8
+        },
+        "positive": {
+          "presentMove": 1,
+          "stoodForFairness": 1,
+          "keptSelfRespect": 1
+        },
+        "negative": {
+          "overWaiting": -0.8,
+          "easySilence": -0.8,
+          "selfErasure": -0.8
+        },
+        "stress": {
+          "fight": 0.5
+        },
+        "disc": {
+          "D": 0.5
+        },
+        "enneagram": {
+          "1": 0.8,
+          "8": 0.4
+        },
+        "moral": {
+          "justiceBased": 1,
+          "truthBased": 0.5
+        },
+        "values": {
+          "justice": 0.8,
+          "truth": 0.9,
+          "autonomy": 0.7
+        },
+        "conflict": {
+          "directConfrontation": 0.7,
+          "boundaryCutoff": 0.5
+        },
+        "reliability": 0.84
+      }
+    },
+    "reliability": 0.84,
+    "targetSystems": [
+      "stress",
+      "conflict",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "coverageFocus": [
+      "stress",
+      "conflict",
+      "communication",
+      "evidence",
+      "positive",
+      "negative"
+    ],
+    "batchTag": "forced-choice-rewrite"
   }
 ];
