@@ -93,7 +93,15 @@ export default function App() {
 
   const answerQuestion = (answer: UserAnswer) => {
     const nextAnswers = [...answers.filter((item) => item.questionId !== answer.questionId), answer];
-    const nextIndex = currentIndex + 1;
+    const answeredSet = new Set(nextAnswers.map((a) => a.questionId));
+
+    // Setelah mengubah jawaban lama, cari pertanyaan berikutnya yang belum dijawab
+    // agar peserta tidak harus melewati ulang pertanyaan yang sudah pernah dijawab
+    let nextIndex = currentIndex + 1;
+    while (nextIndex < QUESTIONS.length && answeredSet.has(QUESTIONS[nextIndex].id)) {
+      nextIndex++;
+    }
+
     if (nextIndex >= QUESTIONS.length) {
       finish(nextAnswers);
     } else {
@@ -134,6 +142,7 @@ export default function App() {
         <StartScreen
           hasProgress={hasProgress}
           progressPercent={progressPercent}
+          totalQuestions={QUESTIONS.length}
           onStart={start}
           onContinue={continueTest}
         />
