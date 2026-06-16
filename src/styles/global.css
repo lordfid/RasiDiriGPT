@@ -412,7 +412,11 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
 .section-title { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: transparent; color: var(--text); border: 0; cursor: pointer; font-weight: 800; font-size: 1rem; }
 .section-content { padding: 0 20px 20px; }
 .score-list { display: grid; gap: 8px; }
-.score-row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08); }
+.score-row { display: grid; grid-template-columns: 7rem 1fr 2.5rem; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; background: rgba(255,255,255,0.08); }
+.score-key { font-size: 0.88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.score-bar-wrap { height: 6px; border-radius: 3px; background: rgba(255,255,255,0.12); overflow: hidden; }
+.score-bar-fill { height: 100%; border-radius: 3px; background: var(--accent-1, #7c6af7); transition: width 0.4s ease; }
+.score-num { font-size: 0.82rem; color: var(--muted); text-align: right; }
 .loading-state { padding: 18px; margin: 20px 0; text-align: center; color: var(--accent-2); }
 
 @media (max-width: 680px) {
@@ -422,4 +426,15 @@ button:disabled { opacity: 0.45; cursor: not-allowed; }
   .primary-button, .secondary-button, .small-actions button, .share-buttons button { width: 100%; }
   .highlight-grid { grid-template-columns: 1fr; }
   .confirm-actions { flex-direction: column; }
+  .score-row { grid-template-columns: 5rem 1fr 2rem; }
+  /* Matikan blur berat di HP menengah untuk performa lebih baik */
+  .hero-card,
+  .question-card,
+  .result-hero,
+  .result-section,
+  .share-panel,
+  .loading-state {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
